@@ -1,24 +1,48 @@
 import logo from './logo.svg';
 import './App.css';
+import Login from './components/Login';
+import Dashboard from './components/Dashboard';
+import Register from './components/Register';
+import Signupsuccess from './components/Signupsuccess';
+import Thankyou from './components/Thankyou';
+import Error from './components/Error';
+import Emailverified from './components/Emailverified';
+import Forgotpassword from './components/Forgotpassword';
+import Faqpage from './components/Faqpage';
+import Kycapplication from './components/Kycapplication';
+import Kycdetails from './components/Kycdetails';
+import Profile from './components/Profile';
+import Kycform from './components/Kycform';
+import Kyclist from './components/Kyclist';
+import Policy from './components/Policy';
+import Userdetails from './components/Userdetails';
+import Userlist from './components/Userlist';
+import { Routes, Route } from 'react-router-dom';
+
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+    <Routes>
+    <Route path='/' element= {<Login />} />
+    <Route path='/Profile' element= {<Profile />} />
+    <Route path='/register' element= {<Register />} />
+    <Route path='/signupsuccess' element= {<Signupsuccess />} />
+    <Route path='/thankyou' element= {<Thankyou />} />
+    <Route path='/error' element= {<Error />} />
+    <Route path='emailverified' element= {<Emailverified/>} />
+    <Route path='/forgotpassword' element= {<Forgotpassword />} />
+    <Route path='/faqpage' element= {<Faqpage />} />
+    <Route path='/kycapplication' element= {<Kycapplication />} />
+    <Route path='/kycdetails' element= {<Kycdetails />} />
+    <Route path='/dashboard' element= {<Dashboard />} />
+    <Route path='/kycform' element= {<Kycform />} />
+    <Route path='kyclist' element={<Kyclist />} />
+    <Route path='policy' element={<Policy />} />
+    <Route path='userdetails' element={<Userdetails />} />
+    <Route path='userlist' element={<Userlist />} />
+  </Routes>
   );
 }
 
