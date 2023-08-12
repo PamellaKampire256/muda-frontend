@@ -165,7 +165,7 @@ function Profile() {
                     </div>
                 </div>
                 <div class="aside sidebar-right col-lg-4">
-                    <div class="account-info card">
+                    {/* <div class="account-info card">
                         <div class="card-innr">
                             <h6 class="card-title card-title-sm">Your Account Status</h6>
                             <ul class="btn-grp">
@@ -175,8 +175,8 @@ function Profile() {
                             <div class="gaps-2-5x"></div>
                             <h6 class="card-title card-title-sm"></h6>
                         </div>
-                    </div>
-                    <div class="referral-info card">
+                    </div> */}
+                    {/* <div class="referral-info card">
                         <div class="card-innr">
                             <h6 class="card-title card-title-sm">Company Registration</h6>
                             <p class=" pdb-0-5x">Invite other Businesses &amp; companies <strong><span class="text-primary"></span> to Register with MUDa KYC Application.</strong></p>
@@ -187,13 +187,13 @@ function Profile() {
                                 <button class="copy-trigger copy-clipboard" data-clipboard-text="https://demo.themenio.com/ico?ref=7d264f90653733592"><em class="ti ti-files"></em></button>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                     <div class="kyc-info card">
                         <div class="card-innr">
                             <h6 class="card-title card-title-sm">Identity Verification - KYC</h6>
                             <p>To comply with regulation, participant will have to go through indentity verification.</p>
                             <p class="lead text-light pdb-0-5x">You have not submitted your KYC application to verify your indentity.</p>
-                            <a href="#" class="btn btn-primary btn-block" onClick={handleProfile}>Click to Proceed</a>
+                            <button class="btn btn-primary" onClick={handleProfile}>Click to Proceed</button>
                             <h6 class="kyc-alert text-danger"></h6>
                         </div>
                     </div>
@@ -207,8 +207,8 @@ function Profile() {
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-8">
                     <ul class="footer-links">
-                        <li><a href="faq-page.html">FAQs</a></li>
-                        <li><a href="regular-page.html">Privacy Policy</a></li>
+                        <li><a href="/#/faqpage">FAQs</a></li>
+                        <li><a href="/#/policy">Privacy Policy</a></li>
                         <li><a href="regular-page.html">Terms of Condition</a></li>
                     </ul>
                 </div>
@@ -216,14 +216,14 @@ function Profile() {
                     <div class="d-flex justify-content-between justify-content-md-end align-items-center guttar-25px pdt-0-5x pdb-0-5x">
                         <div class="copyright-text">&copy; MUDA KYC Project.</div>
                         <div class="lang-switch relative">
-                            <a href="#" class="lang-switch-btn toggle-tigger">En <em class="ti ti-angle-up"></em></a>
+                            {/* <a href="#" class="lang-switch-btn toggle-tigger">En <em class="ti ti-angle-up"></em></a>
                             <div class="toggle-class dropdown-content dropdown-content-up">
                                 <ul class="lang-list">
                                     <li><a href="#">Fr</a></li>
                                     <li><a href="#">Bn</a></li>
                                     <li><a href="#">Lt</a></li>
                                 </ul>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

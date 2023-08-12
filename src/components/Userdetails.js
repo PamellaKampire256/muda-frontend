@@ -1,9 +1,11 @@
 import React from 'react'
+import Navbar from './Navbar'
 
 function Userdetails() {
   return (
     <div>
-        <div class="topbar-wrap">
+        <Navbar />
+        {/* <div class="topbar-wrap">
         <div class="topbar is-sticky">
             <div class="container">
                 <div class="d-flex justify-content-between align-items-center">
@@ -20,7 +22,7 @@ function Userdetails() {
                         </li>
                     </ul>
                     <a class="topbar-logo" href="user-details.html">
-                       <img src="images/logo-light2x.png" srcset="images/logo-light2x.png 2x" alt="logo" />
+                       <img src="assets/images/logo-light2x.png" srcset="assets/images/logo-light2x.png 2x" alt="logo" />
                     </a>
                     <ul class="topbar-nav">
                         <li class="topbar-nav-item relative">
@@ -88,7 +90,7 @@ function Userdetails() {
                 </div>
             </div>
         </div>
-    </div>
+    </div> */}
     
     <div class="page-content">
         <div class="container">
@@ -98,10 +100,10 @@ function Userdetails() {
                         <h4 class="card-title mb-0">User Details</h4>
                         <div class="d-flex align-items-center guttar-20px">
                             <div class="flex-col d-sm-block d-none">
-                                <a href="user-list.html" class="btn btn-sm btn-auto btn-primary"><em class="fas fa-arrow-left mr-3"></em>Back</a>
+                                <a href="/#/userlist" class="btn btn-sm btn-auto btn-primary"><em class="fas fa-arrow-left mr-3"></em>Back</a>
                             </div>
                             <div class="flex-col d-sm-none">
-                                <a href="user-list.html" class="btn btn-icon btn-sm btn-primary"><em class="fas fa-arrow-left"></em></a>
+                                <a href="/#/userlist" class="btn btn-icon btn-sm btn-primary"><em class="fas fa-arrow-left"></em></a>
                             </div>
                             <div class="relative d-inline-block">
                                 <a href="#" class="btn btn-dark btn-sm btn-icon toggle-tigger"><em class="ti ti-more-alt"></em></a>
@@ -177,23 +179,22 @@ function Userdetails() {
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-8">
                     <ul class="footer-links">
-                        <li><a href="faq-page.html">FAQs</a></li>
-                        <li><a href="regular-page.html">Privacy Policy</a></li>
-                        <li><a href="regular-page.html">Terms of Condition</a></li>
+                        <li><a href="/#/faqpage">FAQs</a></li>
+                        <li><a href="/#/policy">Privacy Policy</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 mt-2 mt-sm-0">
                     <div class="d-flex justify-content-between justify-content-md-end align-items-center guttar-25px pdt-0-5x pdb-0-5x">
                         <div class="copyright-text">&copy; MUDA KYC Project.</div>
                         <div class="lang-switch relative">
-                            <a href="#" class="lang-switch-btn toggle-tigger">En <em class="ti ti-angle-up"></em></a>
+                            {/* <a href="#" class="lang-switch-btn toggle-tigger">En <em class="ti ti-angle-up"></em></a>
                             <div class="toggle-class dropdown-content dropdown-content-up">
                                 <ul class="lang-list">
                                     <li><a href="#">Fr</a></li>
                                     <li><a href="#">Bn</a></li>
                                     <li><a href="#">Lt</a></li>
                                 </ul>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

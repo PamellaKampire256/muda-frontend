@@ -1,9 +1,11 @@
 import React from 'react'
+import Navbar from './Navbar'
 
 function Kyclist() {
   return (
     <div>
-        <div class="topbar-wrap">
+        <Navbar />
+        {/* <div class="topbar-wrap">
         <div class="topbar is-sticky">
             <div class="container">
                 <div class="d-flex justify-content-between align-items-center">
@@ -20,7 +22,7 @@ function Kyclist() {
                         </li>
                     </ul>
                     <a class="topbar-logo" href="kyc-list.html">
-                       <img src="images/logo-light2x.png" srcset="images/logo-light2x.png 2x" alt="logo" />
+                       <img src="assets/images/logo-light2x.png" srcset="assets/images/logo-light2x.png 2x" alt="logo" />
                     </a>
                     <ul class="topbar-nav">
                         <li class="topbar-nav-item relative">
@@ -89,7 +91,7 @@ function Kyclist() {
                 </div>
             </div>
         </div>
-    </div>
+    </div> */}
     
     <div class="page-content">
         <div class="container">
@@ -116,13 +118,13 @@ function Kyclist() {
                         </div>
                         <tbody>
                           
-    <div class="footer-bar">
+    {/* <div class="footer-bar">
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-8">
                     <ul class="footer-links">
-                        <li><a href="faq-page.html">FAQs</a></li>
-                        <li><a href="regular-page.html">Privacy Policy</a></li>
+                        <li><a href="/#/faqpage">FAQs</a></li>
+                        <li><a href="/#/policy">Privacy Policy</a></li>
                         <li><a href="regular-page.html">Terms of Condition</a></li>
                     </ul>
                 </div>
@@ -143,7 +145,7 @@ function Kyclist() {
                 </div>
             </div>
         </div>
-    </div>
+    </div> */}
     </tbody>
     </div>
   )

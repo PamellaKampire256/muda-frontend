@@ -5,19 +5,19 @@ function Thankyou() {
   return (
     <div>
      <Navbar />     
-<div class="topbar-wrap">
+ {/* <div class="topbar-wrap">
         <div class="topbar is-sticky">
             <div class="container">
                 <div class="d-flex justify-content-center">
-                    <a class="topbar-logo" href="thank-you.html">
-                       <img src="images/logo-light2x.png" srcset="images/logo-light2x.png 2x" alt="logo" />
+                    <a class="topbar-logo" href="/#/thankyou">
+                       <img src="assets/images/logo-light2x.png" srcset="assets/images/logo-light2x.png 2x" alt="logo" />
                     </a>
                 </div>
             </div>
         </div>
-    </div>
+    </div> */}
 
-    <div class="page-content">
+    <div class="page-content" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '80vh' }} >
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10 col-xl-8">
@@ -39,13 +39,13 @@ function Thankyou() {
         </div>
     </div>
     
-    <div class="footer-bar">
+    {/* <div class="footer-bar">
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-8">
                     <ul class="footer-links">
-                        <li><a href="faq-page.html">FAQs</a></li>
-                        <li><a href="regular-page.html">Privacy Policy</a></li>
+                        <li><a href="/#/faqpage">FAQs</a></li>
+                        <li><a href="/#/policy">Privacy Policy</a></li>
                         <li><a href="regular-page.html">Terms of Condition</a></li>
                     </ul>
                 </div>
@@ -66,7 +66,7 @@ function Thankyou() {
                 </div>
             </div>
         </div>
-    </div>
+    </div> */}
     </div>
   )
 }

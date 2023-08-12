@@ -1,9 +1,17 @@
-    import React from 'react'
+import React from 'react'
+import Navbar from './Navbar'
+import { Routes, useNavigate, Route, Link } from 'react-router-dom';
+
 
     function Kycform() {
+        const navigate= useNavigate();
+        const handleKycform = () =>{
+          navigate('/thankyou') 
+        }
     return (
-            <>
-    <div class="topbar-wrap">
+            <div>
+            <Navbar />
+    {/* <div class="topbar-wrap">
         <div class="topbar is-sticky">
             <div class="container">
                 <div class="d-flex justify-content-between align-items-center">
@@ -20,7 +28,7 @@
                         </li>
                     </ul>
                     <a class="topbar-logo" href="kyc-form.html">
-                       <img src="images/logo-light2x.png" srcset="images/logo-light2x.png 2x" alt="logo" />
+                       <img src="assets/images/logo-light2x.png" srcset="assets/images/logo-light2x.png 2x" alt="logo" />
                     </a>
                     <ul class="topbar-nav">
                         <li class="topbar-nav-item relative">
@@ -89,7 +97,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> */}
     
     <div class="page-header page-header-kyc">
         <div class="container">
@@ -227,8 +235,8 @@
                                     <li class="nav-item flex-grow-0">
                                         <a class="nav-link d-flex align-items-center active" data-toggle="tab" href="#passport">
                                             <div class="nav-tabs-icon">
-                                                <img src="images/icon-passport.png" alt="icon" />
-                                                <img src="images/icon-passport-color.png" alt="icon" />
+                                                <img src="assets/images/icon-passport.png" alt="icon" />
+                                                <img src="assets/images/icon-passport-color.png" alt="icon" />
                                             </div>
                                             <span>Passport</span>
                                         </a>
@@ -237,8 +245,8 @@
                                     <li class="nav-item flex-grow-0">
                                         <a class="nav-link d-flex align-items-center" data-toggle="tab" href="#national-card">
                                             <div class="nav-tabs-icon">
-                                                <img src="images/icon-national-id.png" alt="icon" />
-                                                <img src="images/icon-national-id-color.png" alt="icon" />
+                                                <img src="assets/images/icon-national-id.png" alt="icon" />
+                                                <img src="assets/images/icon-national-id-color.png" alt="icon" />
                                             </div>
                                             <span>National Card</span>
                                         </a>
@@ -246,8 +254,8 @@
                                     <li class="nav-item flex-grow-0">
                                         <a class="nav-link d-flex align-items-center" data-toggle="tab" href="#driver-licence">
                                             <div class="nav-tabs-icon">
-                                                <img src="images/icon-licence.png" alt="icon" />
-                                                <img src="images/icon-licence-color.png" alt="icon" />
+                                                <img src="assets/images/icon-licence.png" alt="icon" />
+                                                <img src="assets/images/icon-licence-color.png" alt="icon" />
                                             </div>
                                             <span>Driver’s License</span>
                                         </a>
@@ -278,7 +286,7 @@
                                             </div>
                                             <div class="col-sm-4 d-none d-sm-block">
                                                 <div class="mx-md-4">
-                                                    <img src="images/vector-passport.png" alt="vector" />
+                                                    <img src="assets/images/vector-passport.png" alt="vector" />
                                                 </div>
                                             </div>
                                         </div>
@@ -306,7 +314,7 @@
                                             </div>
                                             <div class="col-sm-4 d-none d-sm-block">
                                                 <div class="mx-md-4">
-                                                    <img src="images/vector-id-front.png" alt="vector" />
+                                                    <img src="assets/images/vector-id-front.png" alt="vector" />
                                                 </div>
                                             </div>
                                         </div>
@@ -326,7 +334,7 @@
                                             </div>
                                             <div class="col-sm-4 d-none d-sm-block">
                                                 <div class="mx-md-4">
-                                                    <img src="images/vector-id-back.png" alt="vector" />
+                                                    <img src="assets/images/vector-id-back.png" alt="vector" />
                                                 </div>
                                             </div>
                                         </div>
@@ -354,7 +362,7 @@
                                             </div>
                                             <div class="col-sm-4 d-none d-sm-block">
                                                 <div class="mx-md-4">
-                                                    <img src="images/vector-licence.png" alt="vector" />
+                                                    <img src="assets/images/vector-licence.png" alt="vector" />
                                                 </div>
                                             </div>
                                         </div>
@@ -404,7 +412,7 @@
                                     <label for="info-currect">All the personal information I have entered is correct.</label>
                                 </div>
                                 <div class="gaps-1x"></div>
-                                <a href="kyc-thank-you.html" class="btn btn-primary">Process for Verify</a>
+                                <button class="btn btn-primary"onClick={handleKycform}>Process for Verify</button>
                             </div>
                         </div>
                     </div>
@@ -416,32 +424,20 @@
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-8">
-                    <ul class="footer-links">
-                        <li><a href="http://businessplan.pjaguar.com">Whitepaper</a></li>
-                        <li><a href="faq-page.html">FAQs</a></li>
-                        <li><a href="regular-page.html">Privacy Policy</a></li>
-                        <li><a href="regular-page.html">Terms of Condition</a></li>
+                    <ul class="footer-links">    
+                        <li><a href="/#/faqpage">FAQs</a></li>
+                        <li><a href="/#/policy">Privacy Policy</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 mt-2 mt-sm-0">
                     <div class="d-flex justify-content-between justify-content-md-end align-items-center guttar-25px pdt-0-5x pdb-0-5x">
-                        <div class="copyright-text">&copy; 2019 Project Jaguar.</div>
-                        <div class="lang-switch relative">
-                            <a href="#" class="lang-switch-btn toggle-tigger">En <em class="ti ti-angle-up"></em></a>
-                            <div class="toggle-class dropdown-content dropdown-content-up">
-                                <ul class="lang-list">
-                                    <li><a href="#">Fr</a></li>
-                                    <li><a href="#">Bn</a></li>
-                                    <li><a href="#">Lt</a></li>
-                                </ul>
-                            </div>
-                        </div>
+                        <div class="copyright-text">&copy; MUDA KYC Project.</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
- </>
+ </div>
       
     )
     }
