@@ -13,7 +13,7 @@ function Error() {
                         <span class="error-text-large">404</span>
                         <h4 class="text-dark">Opps! Why you’re here?</h4>
                         <p>We are very sorry for inconvenience. It looks like you’re try to access a page that either has been deleted or never existed.</p>
-                        <a href="index-1.html" class="btn btn-primary">Back to Home</a>
+                        <a href="/#/profile" class="btn btn-primary">Back to Home</a>
                     </div>
                 </div>
             </div>

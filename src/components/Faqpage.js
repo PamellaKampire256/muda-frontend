@@ -5,7 +5,7 @@ function Faqpage() {
   return (
     <div>
         <Navbar />
-    <div class="topbar-wrap">
+    {/* <div class="topbar-wrap">
         <div class="topbar is-sticky">
             <div class="container">
                 <div class="d-flex justify-content-between align-items-center">
@@ -22,7 +22,7 @@ function Faqpage() {
                         </li>
                     </ul>
                     <a class="topbar-logo" href="faq-page.html">
-                       <img src="assets/images/logo-light2x.png" srcset="assets/images/logo-light2x.png 2x" alt="logo" />
+                       <img src="images/logo-light2x.png" srcset="images/logo-light2x.png 2x" alt="logo" />
                     </a>
                     <ul class="topbar-nav">
                         <li class="topbar-nav-item relative">
@@ -93,7 +93,7 @@ function Faqpage() {
                 </div>
             </div>
         </div>
-    </div>
+    </div> */}
     
     <div class="page-content">
         <div class="container">
@@ -229,23 +229,22 @@ function Faqpage() {
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-8">
                     <ul class="footer-links">
-                        <li><a href="faq-page.html">FAQs</a></li>
-                        <li><a href="regular-page.html">Privacy Policy</a></li>
-                        <li><a href="regular-page.html">Terms of Condition</a></li>
+                        <li><a href="/#/faqpage">FAQs</a></li>
+                        <li><a href="/#/policy">Privacy Policy</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 mt-2 mt-sm-0">
                     <div class="d-flex justify-content-between justify-content-md-end align-items-center guttar-25px pdt-0-5x pdb-0-5x">
                         <div class="copyright-text">&copy; 2019 Project Jaguar.</div>
                         <div class="lang-switch relative">
-                            <a href="#" class="lang-switch-btn toggle-tigger">En <em class="ti ti-angle-up"></em></a>
+                            {/* <a href="#" class="lang-switch-btn toggle-tigger">En <em class="ti ti-angle-up"></em></a>
                             <div class="toggle-class dropdown-content dropdown-content-up">
                                 <ul class="lang-list">
                                     <li><a href="#">Fr</a></li>
                                     <li><a href="#">Bn</a></li>
                                     <li><a href="#">Lt</a></li>
                                 </ul>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

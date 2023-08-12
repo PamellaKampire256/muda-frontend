@@ -1,9 +1,10 @@
 import React from 'react'
-
+import Navbar from './Navbar'
 function Kycapplication() {
   return (
     <div>
-        <div class="topbar-wrap">
+        <Navbar />
+        {/* <div class="topbar-wrap">
         <div class="topbar is-sticky">
             <div class="container">
                 <div class="d-flex justify-content-between align-items-center">
@@ -22,7 +23,7 @@ function Kycapplication() {
                      
                       
                     <a class="topbar-logo" href="kyc-application.html">
-                       <img src="images/logo-light2x.png" srcset="images/logo-light2x.png 2x" alt="logo" />
+                       <img src="assets/images/logo-light2x.png" srcset="assets/images/logo-light2x.png 2x" alt="logo" />
                     </a>
                     <ul class="topbar-nav">
                         <li class="topbar-nav-item relative">
@@ -53,7 +54,7 @@ function Kycapplication() {
                                 
                                 <li class="has-dropdown"><a class="drop-toggle" href="#">Misc Pages</a>
                                     <ul class="navbar-dropdown">
-                                        <li><a href="404-error.html">404 Error</a></li>
+                                        <li><a href="/error">404 Error</a></li>
                                         <li><a href="sign-in.html">Sign In / Login</a></li>
                                         <li><a href="sign-up.html">Sign Up / Registration</a></li>
                                         <li><a href="signup-success.html">Signup Success</a></li>
@@ -93,7 +94,7 @@ function Kycapplication() {
                 </div>
             </div>
         </div>
-    </div>
+    </div> */}
     <div class="page-header page-header-kyc">
         <div class="container">
             <div class="row justify-content-center">
@@ -115,11 +116,11 @@ function Kycapplication() {
                                     <em class="ti ti-files"></em>
                                 </div>
                                 <span class="status-text text-dark">You have not submitted your necessary documents to verify your identity. In order to be part, please verify your identity.</span>
-                                <a href="kyc-form.html" class="btn btn-primary">Click here to complete your KYC</a>
+                                <a href="/#/kycform" class="btn btn-primary">Click here to complete your KYC</a>
                             </div>
                         </div>
                     </div>
-                    <p class="text-light text-center">If you have any question, please contact our support team <a href="#">info@tokenwiz.com</a>.</p>
+                    <p class="text-light text-center">If you have any question, please contact our support team <a href="https://muda.tech">muda.tech</a>.</p>
                     <div class="gaps-1x"></div>
                     <div class="gaps-3x d-none d-sm-block"></div>
                 </div>
@@ -132,9 +133,8 @@ function Kycapplication() {
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-8">
                     <ul class="footer-links">
-                        <li><a href="faq-page.html">FAQs</a></li>
-                        <li><a href="regular-page.html">Privacy Policy</a></li>
-                        <li><a href="regular-page.html">Terms of Condition</a></li>
+                        <li><a href="/#/faqpage">FAQs</a></li>
+                        <li><a href="/#/policy">Privacy Policy</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 mt-2 mt-sm-0">

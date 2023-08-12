@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
 import Login from './components/Login';
-import Dashboard from './components/Dashboard';
 import Register from './components/Register';
 import Signupsuccess from './components/Signupsuccess';
 import Thankyou from './components/Thankyou';
@@ -31,17 +30,16 @@ function App() {
     <Route path='/signupsuccess' element= {<Signupsuccess />} />
     <Route path='/thankyou' element= {<Thankyou />} />
     <Route path='/error' element= {<Error />} />
-    <Route path='emailverified' element= {<Emailverified/>} />
+    <Route path='/emailverified' element= {<Emailverified/>} />
     <Route path='/forgotpassword' element= {<Forgotpassword />} />
     <Route path='/faqpage' element= {<Faqpage />} />
     <Route path='/kycapplication' element= {<Kycapplication />} />
     <Route path='/kycdetails' element= {<Kycdetails />} />
-    <Route path='/dashboard' element= {<Dashboard />} />
     <Route path='/kycform' element= {<Kycform />} />
-    <Route path='kyclist' element={<Kyclist />} />
-    <Route path='policy' element={<Policy />} />
-    <Route path='userdetails' element={<Userdetails />} />
-    <Route path='userlist' element={<Userlist />} />
+    <Route path='/kyclist' element={<Kyclist />} />
+    <Route path='/policy' element={<Policy />} />
+    <Route path='/userdetails' element={<Userdetails />} />
+    <Route path='/userlist' element={<Userlist />} />
   </Routes>
   );
 }
