@@ -21,6 +21,9 @@ function Navbar() {
                             </a>
                         </li>
                     </ul>
+                    <a class="topbar-logo" href="/#/kycform">
+                       <img src="assets/images/logo-light2x.png" srcset="images/logo-light2x.png 2x" alt="logo" />
+                    </a>
                     <ul class="topbar-nav">
                         <li class="topbar-nav-item relative">
                             <span class="user-welcome d-none d-lg-inline-block">Welcome! New User</span>
@@ -49,8 +52,8 @@ function Navbar() {
             <div class="container">
                 <div class="navbar-innr">
                     <ul class="navbar-menu">
-                        <li><a href="/#/profile"><em class="ikon ikon-user"></em> Profile</a></li>
-                        <li class="has-dropdown page-links-all"><Link class="drop-toggle" href="#"><em class="ikon ikon-exchange"></em> Pages</Link>
+                        <li><a href="/#/profile"><em class="ikon ikon-user"></em> Personal Informaion</a></li>
+                        <li class="has-dropdown page-links-all"><Link class="drop-toggle" href="#"><em class="ikon ikon-exchange"></em>Company Information</Link>
                             <ul class="navbar-dropdown">
                                
                                 <li class="has-dropdown"><Link class="drop-toggle" href="#">KYC Panel</Link>
