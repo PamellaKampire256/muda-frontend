@@ -209,7 +209,6 @@ function Profile() {
                     <ul class="footer-links">
                         <li><a href="/#/faqpage">FAQs</a></li>
                         <li><a href="/#/policy">Privacy Policy</a></li>
-                        <li><a href="regular-page.html">Terms of Condition</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 mt-2 mt-sm-0">
