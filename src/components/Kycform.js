@@ -660,7 +660,7 @@ import { Routes, useNavigate, Route, Link } from 'react-router-dom';
                                     <label for="info-currect">All the personal information I have entered is correct.</label>
                                 </div>
                                 <div class="gaps-1x"></div>
-                                <Link href="/thank-you" class="btn btn-primary">Process for Verify</Link>
+                                <Link to="/thankyou" class="btn btn-primary">Process for Verify</Link>
                             </div>
                         </div>
                     </div>
