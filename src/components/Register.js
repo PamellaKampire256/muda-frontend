@@ -35,7 +35,7 @@ function Register() {
                     </div>
                     <button class="btn btn-primary btn-block" onClick={handleRegister}>Create Account</button>
                 </form>
-                <div class="sap-text"><span>Or Sign Up With</span></div>
+                {/* <div class="sap-text"><span>Or Sign Up With</span></div> */}
 
                 <ul class="row guttar-20px guttar-vr-20px">
                    
