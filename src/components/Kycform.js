@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from './Navbar'
 import { Routes, useNavigate, Route, Link } from 'react-router-dom';
+import 'react-phone-number-input/style.css';
+import PhoneInput from 'react-phone-number-input';
 
 
     function Kycform() {
@@ -8,6 +10,9 @@ import { Routes, useNavigate, Route, Link } from 'react-router-dom';
         const handleKycform = () =>{
           navigate('/thankyou') 
         }
+        const [phoneNumber, setPhoneNumber] = useState('');
+
+
     return (
             <div>
             <Navbar />
@@ -381,7 +386,7 @@ import { Routes, useNavigate, Route, Link } from 'react-router-dom';
                                     <p>Please type carefully and fill out the form with your personal details. Your can’t edit these details once you submitted the form.</p>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    {/* <div class="col-md-6">
                                         <div class="input-item input-with-label">
                                             <label class="input-item-label">First Name <span class="text-danger">*</span></label>
                                             <input class="input-bordered" type="text" />
@@ -411,12 +416,12 @@ import { Routes, useNavigate, Route, Link } from 'react-router-dom';
                                             <input class="input-bordered date-picker" type="text" />
                                         </div>
                                     </div>
-                                    {/* <div class="col-md-6">
+                                    <div class="col-md-6">
                                         <div class="input-item input-with-label">
                                             <label class="input-item-label">Telegram Username</label>
                                             <input class="input-bordered" type="text" />
                                         </div>
-                                    </div> */}
+                                    </div>
                                 </div>
                                 <h4 class="text-secondary mgt-0-5x">Your Address</h4>
                                 <div class="row">
@@ -462,7 +467,47 @@ import { Routes, useNavigate, Route, Link } from 'react-router-dom';
                                             <label class="input-item-label">Zip Code <span class="text-danger">*</span></label>
                                             <input class="input-bordered" type="text" />
                                         </div>
-                                    </div>
+                                    </div> */}
+                                    <div class="col-md-6">
+            <div class="input-item input-with-label">
+                <label for="board-of-directors" class="input-item-label">Board of Directors and Key Management Personnel Details (Optional)</label>
+                <textarea class="input-bordered" id="board-of-directors" name="board-of-directors" placeholder="Provide details about board of directors and key management personnel"></textarea>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="input-item input-with-label">
+                <label for="contact-phone" class="input-item-label">Contact Phone (Optional)</label>
+                <PhoneInput
+                                                    placeholder="Enter your phone number"
+                                                    value={phoneNumber}
+                                                    onChange={setPhoneNumber}
+                                                />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="input-item input-with-label">
+                <label for="contact-email" class="input-item-label">Contact Email (Optional)</label>
+                <input class="input-bordered" type="email" id="contact-email" name="contact-email" placeholder="Your contact email (optional)" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="input-item input-with-label">
+                <label for="tax-identification-number-business" class="input-item-label">Tax Identification Number (TIN) or equivalent (Optional)</label>
+                <input class="input-bordered" type="text" id="tax-identification-number-business" name="tax-identification-number-business" placeholder="Your TIN or equivalent (optional)" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="input-item input-with-label">
+                <label for="financial-statements" class="input-item-label">Financial Statements (e.g., balance sheet, income statement) (Optional)</label>
+                <input class="input-bordered" type="file" id="financial-statements" name="financial-statements" placeholder="Upload financial statements (optional)" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="input-item input-with-label">
+                <label for="source-of-funds-business" class="input-item-label">Source of Funds or Business Capital (Optional)</label>
+                <input class="input-bordered" type="text" id="source-of-funds-business" name="source-of-funds-business" placeholder="Your source of funds or business capital (optional)" />
+            </div>
+        </div>
                                 </div>
                             </div>
                         </div>
