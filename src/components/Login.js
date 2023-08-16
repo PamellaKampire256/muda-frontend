@@ -35,8 +35,10 @@ function Login() {
                     </div>
                     <button class="btn btn-primary btn-block" onClick={handleLogin}>Sign In</button>
                 </form>
-                <div class="sap-text"><span>Or Sign In With</span></div>
-
+                {/* <div class="sap-text"><span>Or Sign In With</span></div> */}
+                    <div>
+                        
+                    </div>
                 <ul class="row guttar-20px guttar-vr-20px">
                    
                 </ul>

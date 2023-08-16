@@ -1,12 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Select from 'react-select';
+import DatePicker from 'react-datepicker'; 
+import 'react-datepicker/dist/react-datepicker.css';
 import { Routes, useNavigate, Route } from 'react-router-dom';
 import Navbar from './Navbar';
+import { countries } from 'countries-list'; 
+import 'react-phone-number-input/style.css';
+import PhoneInput from 'react-phone-number-input';
 
 function Profile() {
        const navigate =useNavigate();
        const handleProfile = () =>{
         navigate('/kycform')
        }
+
+       const [dateOfBirth, setDateOfBirth] = useState(null);
+
+       const [phoneNumber, setPhoneNumber] = useState('');
+       
+       const countryOptions = Object.keys(countries).map((countryCode) => ({
+        value: countryCode,
+        label: countries[countryCode].name,
+    }));
+    
   return (
     <div>
         <Navbar />
@@ -21,13 +37,13 @@ function Profile() {
                             </div>
                             <ul class="nav nav-tabs nav-tabs-line" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#personal-data">Personal Data</a>
+                                    <a class="nav-link active" data-toggle="tab" href="#personal-data">Personal Information</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#settings">Settings</a>
+                                    <a class="nav-link" data-toggle="tab" href="#settings">Company Informaion</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#password">Password</a>
+                                    <a class="nav-link" data-toggle="tab" href="#password">Confirmation</a>
                                 </li>
                             </ul>
                             <div class="tab-content" id="profile-details">
@@ -36,41 +52,76 @@ function Profile() {
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="input-item input-with-label">
-                                                    <label for="full-name" class="input-item-label">Full Name</label>
-                                                    <input class="input-bordered" type="text" id="full-name" name="full-name" value="Stefan Harary" />
+                                                    <label for="full-name" class="input-item-label">Full NAME</label>
+                                                    <input class="input-bordered" type="text" id="full-name" name="full-name" placeholder=" " />
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
-                                                <div class="input-item input-with-label">
-                                                    <label for="email-address" class="input-item-label">Email Address</label>
-                                                    <input class="input-bordered" type="text" id="email-address" name="email-address" value="info@softnio.com" disabled="" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="input-item input-with-label">
-                                                    <label for="mobile-number" class="input-item-label">Mobile Number</label>
-                                                    <input class="input-bordered" type="text" id="mobile-number" name="mobile-number" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="input-item input-with-label">
-                                                    <label for="date-of-birth" class="input-item-label">Date of Birth</label>
-                                                    <input class="input-bordered date-picker-dob" type="text" id="date-of-birth" name="date-of-birth" />
+                                            <div class="input-item input-with-label">
+                                        <label for="date-of-birth" class="input-item-label">Date of Birth</label>
+                                                                <DatePicker
+                                                        className="input-bordered date-picker-dob"
+                                                        selected={dateOfBirth}
+                                                        onChange={(date) => setDateOfBirth(date)}
+                                                        dateFormat="yyyy-MM-dd"
+                                                        placeholderText="(Select a date)"
+                                                    />
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="input-item input-with-label">
                                                     <label for="nationality" class="input-item-label">Nationality</label>
-                                                    <select class="select-bordered select-block" name="nationality" id="nationality">
-                                                        <option value="us">United State</option>
-                                                        <option value="uk">United KingDom</option>
-                                                        <option value="fr">France</option>
-                                                        <option value="ch">China</option>
-                                                        <option value="cr">Czech Republic</option>
-                                                        <option value="cb">Colombia</option>
-                                                    </select>
+                                                    <Select options={countryOptions} placeholder="Select your nationality" />
                                                 </div>
                                             </div>
+                                        <div class="col-md-6">
+                                            <div class="input-item input-with-label">
+                                                <label for="address" class="input-item-label">Address</label>
+                                                <input class="input-bordered" type="text" id="address" name="address" placeholder="Your Address" />
+                                            </div>
+                                        </div>
+                                    <div class="col-md-6">
+                                                <div class="input-item input-with-label">
+                                                    <label for="proof-of-address" class="input-item-label">Proof of Address</label>
+                                                    <input class="input-bordered" type="file" id="proof-of-address" name="proof-of-address" placeholder="(e.g. utility bill, bank statement)" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                        <div class="input-item input-with-label">
+                                            <label for="identification-number" class="input-item-label">Identification Number</label>
+                                            <input class="input-bordered" type="text" id="identification-number" name="identification-number" placeholder="(e.g. SSN, National Insurance Number,Aadhaar Number)" />
+                                        </div>
+                                    </div>            
+                                            <div class="col-md-6">
+                                                <div class="input-item input-with-label">
+                                                    <label for="phone-number" class="input-item-label">Phone Number</label>
+                                                    <PhoneInput
+                                                    placeholder="Enter your phone number"
+                                                    value={phoneNumber}
+                                                    onChange={setPhoneNumber}
+                                                />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                    <div class="input-item input-with-label">
+                                        <label for="email-address" class="input-item-label">Email Address</label>
+                                        <input class="input-bordered" type="text" id="email-address" name="email-address" placeholder="info@softnio.com" disabled="" />
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="input-item input-with-label">
+                                        <label for="tax-identification-number" class="input-item-label">Tax Identification Number (TIN)</label>
+                                        <input class="input-bordered" type="text" id="tax-identification-number" name="tax-identification-number" placeholder="Your TIN" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-item input-with-label">
+                                        <label for="source-of-funds" class="input-item-label">Source of Funds</label>
+                                        <input class="input-bordered" type="text" id="source-of-funds" name="source-of-funds" placeholder="Your Source of Funds" />
+                                    </div>
+                                </div>
+                                           
                                         </div>
                                         <div class="gaps-1x"></div>
                                         <div class="d-sm-flex justify-content-between align-items-center">
