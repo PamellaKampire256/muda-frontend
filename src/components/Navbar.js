@@ -27,21 +27,19 @@ function Navbar() {
                     <ul class="topbar-nav">
                         <li class="topbar-nav-item relative">
                             <span class="user-welcome d-none d-lg-inline-block">Welcome! New User</span>
-                            <a class="toggle-tigger user-thumb" href="#"><em class="ti ti-user"></em></a>
+                            <a class="toggle-tigger user-thumb" href="#"><em class="ti ti-user">  </em></a>
                             <div class="toggle-class dropdown-content dropdown-content-right dropdown-arrow-right user-dropdown">
-                                <div>
+                                {/* <div>
 
                                  <div>
                                     
                                     </div>   
 
-                                </div>
+                                </div> */}
                                 <ul class="user-links">
-                                    <li><a href="/#/profile"><i class="ti ti-id-badge"></i>My Profile</a></li>
-                                </ul>
+                                    <li><a href="/#/profile"><i class="ti ti-id-badge"></i>My Profile</a></li> </ul>
                                 <ul class="user-links bg-light">
-                                    <li><a href="/"><i class="ti ti-power-off"></i>Logout</a></li>
-                                </ul>
+                                    <li><a href="/"><i class="ti ti-power-off"></i>Logout</a></li> </ul>
                             </div>
                         </li>
                     </ul>
