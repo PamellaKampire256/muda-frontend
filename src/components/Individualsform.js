@@ -8,9 +8,10 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { countries } from 'countries-list'; 
 import 'react-phone-number-input/style.css';
 import Select from 'react-select';
+import { useDropzone } from 'react-dropzone';
 
 
-    function Kycform() {
+    function Individualsform() {
         const navigate= useNavigate();
         const handleKycform = () =>{
           navigate('/thankyou') 
@@ -23,6 +24,11 @@ import Select from 'react-select';
             label: countries[countryCode].name,
         }));
 
+        const onDrop = (acceptedFiles) => {
+            // Handle dropped files here
+        };
+    
+        const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
     return (
             <div>
             <Navbar />
@@ -31,7 +37,7 @@ import Select from 'react-select';
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-xl-7 text-center">
                     <h2 class="page-title">Begin your ID-Verification</h2>
-                    <p class="large">Ensure to give accurate Informaion</p>
+                    <p class="large">Upload the Documents carefully.</p>
                 </div>
             </div>
         </div>
@@ -57,147 +63,122 @@ import Select from 'react-select';
                                     <p>Please type carefully and fill out the form with valid Informaion. Your can’t edit these details once you submitted the form.</p>
                                 </div>
                                 <div class="row"> 
-                        
-
-                                             <div class="col-md-6">
-                                                <div class="input-item input-with-label">
-                                                    <label for="business-name" class="input-item-label" style={{ fontSize: '17px' }}>Business Name</label>
-                                                    <input class="input-bordered" type="text" id="business-name" name="business-name" placeholder="Your Business Name" />
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <div class="input-item input-with-label">
-                                                    <label for="business-registration-number" class="input-item-label" style={{ fontSize: '17px' }}>Business Registration Number</label>
-                                                    <input class="input-bordered" type="text" id="business-registration-number" name="business-registration-number" placeholder="Your Business Registration Number" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="input-item input-with-label">
-                                                    <label for="country-of-incoporation" class="input-item-label" style={{ fontSize: '17px' }}>Country of Incoporation</label>
-                                                    <Select options={countryOptions} placeholder="Select your country" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                <div class="input-item input-with-label">
-                                    <label for="registered-business-address" class="input-item-label" style={{ fontSize: '17px' }}>Registered Business Address</label>
-                                    <input class="input-bordered" type="text" id="registered-business-address" name="registered-business-address" placeholder="Your Registered Business Address" />
-                                </div>
-                            </div>
-
+                       
                             <div class="col-md-6">
-                                <div class="input-item input-with-label">
-                                    <label for="business-mailing-address" class="input-item-label" style={{ fontSize: '17px' }}>Business Mailing Address (if different from registered address)</label>
-                                    <input class="input-bordered" type="text" id="business-mailing-address" name="business-mailing-address" placeholder="Your Business Mailing Address" />
-                                </div>
-                            </div>
+    <div class="input-item input-with-label">
+        <label class="input-item-label">Passport (photo page)</label>
+        <input class="input-bordered" type="file" placeholder="Upload Passport" />
+    </div>
+</div>
 
-                            <div class="col-md-6">
-                                <div class="input-item input-with-label">
-                                    <label for="date-of-incorporation" class="input-item-label" style={{ fontSize: '17px' }}>Date of Incorporation</label>
-                                    <DatePicker
-                                        className="input-bordered date-picker-dob"
-                                        selected={dateOfBirth}
-                                        onChange={(date) => setDateOfBirth(date)}
-                                        dateFormat="yyyy-MM-dd"
-                                        placeholderText="(Select a date)"
-                                    />
-                                </div>
-                            </div>
+<div class="col-md-6">
+    <div class="input-item input-with-label">
+        <label class="input-item-label">National ID card (both sides) OR Driver's license (both sides)</label>
+        <input class="input-bordered" type="file" placeholder="Upload ID Card or Driver's License" />
+    </div>
+</div>
 
-                            <div class="col-md-6">
-                                <div class="input-item input-with-label">
-                                    <label for="business-type" class="input-item-label" style={{ fontSize: '17px' }}>Business Type (e.g., Corporation, Partnership, Sole Proprietorship)</label>
-                                    <input class="input-bordered" type="text" id="business-type" name="business-type" placeholder="Your Business Type" />
-                                </div>
-                            </div>
+<div class="col-md-6">
+    <div class="input-item input-with-label">
+        <label class="input-item-label">Utility bill or bank statement showing the address</label>
+        <input class="input-bordered" type="file" placeholder="Upload Utility Bill or Bank Statement" />
+    </div>
+</div>
 
-                            <div class="col-6">
-                                <div class="input-item input-with-label">
-                                    <label for="board-of-directors" class="input-item-label" style={{ fontSize: '17px' }}>Board of Directors and Key Management Personnel Details</label>
-                                    <textarea class="input-bordered" id="board-of-directors" name="board-of-directors" placeholder="Provide details about board of 
-                                    directors and key management personnel"></textarea>
-                                </div>
-                            </div>
-
-                              <div class="col-md-6">
-                                <div class="input-item input-with-label">
-                                  <label for="phone-number" class="input-item-label">Phone Number</label>
-                                     <PhoneInput
-                                        placeholder="Enter your phone number"
-                                        value={phoneNumber}
-                                        onChange={setPhoneNumber}
-                                    />
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="input-item input-with-label">
-                                    <label for="contact-email" class="input-item-label" style={{ fontSize: '17px' }}>Contact Email</label>
-                                    <input class="input-bordered" type="email" id="contact-email" name="contact-email" placeholder="Your contact email" />
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="input-item input-with-label">
-                                    <label for="tax-identification-number-business" class="input-item-label" style={{ fontSize: '17px' }}>Tax Identification Number (TIN) or equivalent</label>
-                                    <input class="input-bordered" type="text" id="tax-identification-number-business" name="tax-identification-number-business" placeholder="Your TIN or equivalent" />
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="input-item input-with-label">
-                                    <label for="financial-statements" class="input-item-label" style={{ fontSize: '17px' }}>Financial Statements (e.g., balance sheet, income statement)</label>
-                                    <input class="input-bordered" type="file" id="financial-statements" name="financial-statements" placeholder="Upload financial statements" />
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="input-item input-with-label">
-                                    <label for="source-of-funds-business" class="input-item-label" style={{ fontSize: '17px' }}>Source of Funds or Business Capital</label>
-                                    <input class="input-bordered" type="text" id="source-of-funds-business" name="source-of-funds-business" placeholder="Your source of funds or business capital" />
-                                </div>
-                            </div>
+<div class="col-md-6">
+    <div class="input-item input-with-label">
+        <label class="input-item-label">A recent photograph</label>
+        <input class="input-bordered" type="file" placeholder="Upload Photograph" />
+    </div>
+</div>
 
 
-                            <div class="col-md-6">
-                                <div class="input-item input-with-label">
-                                    <label for="nature-of-business-activities" class="input-item-label" style={{ fontSize: '17px' }}>Nature of Business Activities</label>
-                                    <textarea class="input-bordered" id="nature-of-business-activities" name="nature-of-business-activities" placeholder="Describe the nature of business activities"></textarea>
-                                </div>
-                            </div>
+<div class="col-md-6">
+    <div class="input-item input-with-label">
+        <label class="input-item-label">Business License</label>
+        <input class="input-bordered" type="file" placeholder="Upload Business License" />
+    </div>
+</div>
 
-                            <div class="col-md-6">
-                                <div class="input-item input-with-label">
-                                    <label for="business-website" class="input-item-label" style={{ fontSize: '17px' }}>Business Website (If applicable)</label>
-                                    <input class="input-bordered" type="text" id="business-website" name="business-website" placeholder="https://example.com" />
-                                    <div class="input-note">
-                                        <input type="checkbox" id="skip-business-website" />
-                                        <label for="skip-business-website" style={{ fontSize: '17px' }}>I don't have a business website</label>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="col-md-6">
-                                <div class="input-item input-with-label">
-                                    <label for="proof-of-address-business" class="input-item-label" style={{ fontSize: '17px' }}>Proof of Address (e.g. utility bill, bank statement for the business)</label>
-                                    <input class="input-bordered" type="file" id="proof-of-address-business" name="proof-of-address-business" placeholder="(e.g. utility bill, bank statement)" />
-                                </div>
-                            </div>
+<div class="col-md-6">
+    <div class="input-item input-with-label">
+        <label class="input-item-label">Shareholder register or equivalent showing ownership details</label>
+        <input class="input-bordered" type="file" placeholder="Upload Shareholder Register" />
+    </div>
+</div>
 
-                            <div class="col-md-6">
-                                <div class="input-item input-with-label">
-                                    <label for="expected-transactions" class="input-item-label" style={{ fontSize: '17px' }}>Expected Volume and Nature of Transactions</label>
-                                    <textarea class="input-bordered" id="expected-transactions" name="expected-transactions" placeholder="Describe the expected volume and nature of transactions"></textarea>
-                                </div>
-                            </div>
 
-                            <div class="col-md-6">
-                                <div class="input-item input-with-label">
-                                    <label for="trade-references" class="input-item-label" style={{ fontSize: '17px' }}>Trade References or Business References</label>
-                                    <textarea class="input-bordered" id="trade-references" name="trade-references" placeholder="Provide trade references or business references"></textarea>
-                                </div>
-                            </div>
+<div class="col-md-6">
+    <div class="input-item input-with-label">
+        <label class="input-item-label">List of Board of Directors or equivalent document</label>
+        <input class="input-bordered" type="file" placeholder="Upload Board of Directors Document" />
+    </div>
+</div>
+
+
+<div class="col-md-6">
+    <div class="input-item input-with-label">
+        <label class="input-item-label">Utility bill or bank statement showing the business address</label>
+        <input class="input-bordered" type="file" placeholder="Upload Business Address Document" />
+    </div>
+</div>
+
+
+<div class="col-md-6">
+    <div class="input-item input-with-label">
+        <label class="input-item-label">Tax Identification Number (TIN) certificate or equivalent</label>
+        <input class="input-bordered" type="file" placeholder="Upload TIN Certificate" />
+    </div>
+</div>
+
+
+<div class="col-md-6">
+    <div class="input-item input-with-label">
+        <label class="input-item-label">Financial Statements (if required)</label>
+        <input class="input-bordered" type="file" placeholder="Upload Financial Statements" />
+        <div class="input-note">
+         <input type="checkbox" id="skip-financial-statements" />
+         <label for="skip-financial-statements" style={{ fontSize: '17px' }}>Skip this</label>
+      </div>
+    </div>
+</div>
+
+
+<div class="col-md-6">
+    <div class="input-item input-with-label">
+        <label class="input-item-label">Beneficial Ownership Document (if applicable)</label>
+        <input class="input-bordered" type="file" placeholder="Upload Beneficial Ownership Document" />
+        <div class="input-note">
+         <input type="checkbox" id="skip-beneficial-ownership-document" />
+         <label for="skip-beneficial-ownership-document" style={{ fontSize: '17px' }}>Skip this</label>
+      </div>
+    </div>
+</div>
+
+
+<div class="col-md-6">
+    <div class="input-item input-with-label">
+        <label class="input-item-label">Trade Licenses (for specific industries or activities)</label>
+        <input class="input-bordered" type="file" placeholder="Upload Trade Licenses" />
+    </div>
+</div>
+
+
+<div class="col-md-6">
+    <div class="input-item input-with-label">
+        <label class="input-item-label">Passport or National ID of authorized signatories, major shareholders, and key management personnel</label>
+        <input class="input-bordered" type="file" placeholder="Upload Passport or National ID" />
+    </div>
+</div>
+
+
+<div class="col-md-6">
+    <div class="input-item input-with-label">
+        <label class="input-item-label">Photograph of business premises or storefront (in some cases)</label>
+        <input class="input-bordered" type="file" placeholder="Upload Photograph of Business Premises" />
+    </div>
+</div>
 
                            
                                 </div>
@@ -317,7 +298,7 @@ import Select from 'react-select';
                                 </div>
                             </div>
                         </div>
-                       
+                        
                         <div class="form-step form-step-final">
                             <div class="form-step-fields card-innr">
                                 <div class="input-item">
@@ -365,10 +346,11 @@ import Select from 'react-select';
             </div>
         </div>
     </div>
+   
  </div>
       
     )
     }
 
 
-export default Kycform
+export default Individualsform
