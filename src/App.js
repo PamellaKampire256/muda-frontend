@@ -16,6 +16,7 @@ import Kyclist from './components/Kyclist';
 import Policy from './components/Policy';
 import Userdetails from './components/Userdetails';
 import Userlist from './components/Userlist';
+import Individualsform from './components/Individualsform';
 import { Routes, Route } from 'react-router-dom';
 
 
@@ -40,6 +41,7 @@ function App() {
     <Route path='/policy' element={<Policy />} />
     <Route path='/userdetails' element={<Userdetails />} />
     <Route path='/userlist' element={<Userlist />} />
+    <Route path='/individualsform' element={<Individualsform />} />
   </Routes>
   );
 }
