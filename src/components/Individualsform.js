@@ -270,7 +270,7 @@ import { useDropzone } from 'react-dropzone';
                                     <div class="tab-pane fade" id="driver-licence">
                                         <h5 class="text-secondary font-bold">To avoid delays when verifying account, Please make sure bellow:</h5>
                                         <ul class="list-check">
-                                            <li>Chosen credential must not be expaired.</li>
+                                            <li>Chosen credential must not be expired.</li>
                                             <li>Document should be good condition and clearly visible.</li>
                                             <li>Make sure that there is no light glare on the card.</li>
                                         </ul>

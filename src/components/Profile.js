@@ -14,6 +14,7 @@ function Profile() {
         navigate('/kycform')
        }
 
+
        const [dateOfBirth, setDateOfBirth] = useState(null);
 
        const [phoneNumber, setPhoneNumber] = useState('');
@@ -39,13 +40,13 @@ function Profile() {
                             <ul class="nav nav-tabs nav-tabs-line" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" data-toggle="tab" href="#personal-data">Personal Information</a>
-                                    {/* <a className={`nav-link ${selectedTab === 'personal-data' ? 'active' : ''}`} data-toggle="tab" href="#personal-data" onClick={() => setSelectedTab('personal-data')}>Personal Information</a> */}
+                                   
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" data-toggle="tab" href="#company-details">Company Informaion</a>    
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#password">Upload Documents</a>
+                                    <a class="nav-link" data-toggle="tab" href="#upload-documents">Upload Documents</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" data-toggle="tab" href="#comfirm-details-and-submit">Comfirm Details and Submit</a>
@@ -214,7 +215,7 @@ function Profile() {
                                     </div>
                                 
                                 </div>
-                                <div class="tab-pane fade" id="password">
+                                <div class="tab-pane fade" id="upload-documents">
 
                         <div class="row justify-content-center">
                     <div class="col-md-6">

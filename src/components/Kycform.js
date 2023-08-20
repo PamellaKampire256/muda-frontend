@@ -223,7 +223,7 @@ import Select from 'react-select';
                                     <div class="tab-pane fade show active" id="passport">
                                         <h5 class="text-secondary font-bold">To avoid delays when verifying your account, Please make sure that:</h5>
                                         <ul class="list-check">
-                                            <li>Chosen credential must not be expaired.</li>
+                                            <li>Chosen credential must not be expired.</li>
                                             <li>Document should be good condition and clearly visible.</li>
                                             <li>Make sure that there is no light glare on the card.</li>
                                         </ul>
