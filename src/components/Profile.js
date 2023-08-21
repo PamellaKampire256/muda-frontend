@@ -13,8 +13,6 @@ function Profile() {
        const handleProfile = () =>{
         navigate('/kycform')
        }
-
-
        const [dateOfBirth, setDateOfBirth] = useState(null);
 
        const [phoneNumber, setPhoneNumber] = useState('');
@@ -24,6 +22,15 @@ function Profile() {
         value: countryCode,
         label: countries[countryCode].name,
     }));
+
+    const PersonalInfoTabContent = ({ details }) => (
+        <div id="personal-data" className="tab-pane active">
+          {/* Personal Information tab content */}
+          <p>First Name: {details.firstName}</p>
+          <p>Last Name: {details.lastName}</p>
+          <p>Email: {details.email}</p>
+        </div>
+      );
     
   return (
     <div>
@@ -177,7 +184,7 @@ function Profile() {
                                 <div class="step-head">
                                     <div class="step-number">01</div>
                                     <div class="step-head-text">
-                                        <h4>For Companies</h4>
+                                    <Link to={'/kycform'}><h4><u>For Companies</u></h4></Link>
                                     
                                         <p>Please provide accurate and complete information for the company form.</p>
                                          <p>The information you provide will be used for verification purposes.</p>
@@ -189,16 +196,12 @@ function Profile() {
                                 <div class="step-head">
                                     <div class="step-number">02</div>
                                     <div class="step-head-text">
-                                        <h4>For Individuals</h4>
+                                    <Link to={'/individualsform'}><h4><u>For Individuals</u></h4></Link>
                                         <p>Fill in the individual form with accurate and up-to-date information.</p> 
                                         <p> The details you provide will be used for verification purposes.n</p>
                                     </div>
                                 </div>
                             </div>
- 
-    
-        
-
                             </div>
                                         <div class="gaps-1x"></div>
                                         <div class="d-sm-flex justify-content-between align-items-center">
@@ -236,21 +239,21 @@ function Profile() {
 
                                 <div class="tab-pane fade" id="comfirm-details-and-submit">
 
-<div class="row justify-content-center">
-<div class="col-md-6">
-        <div class="input-item input-with-label">
-            <label for="submit-application-business" class="input-item-label">Confirm Details and Submit</label>
-            <div class="input-note">
-        <input type="checkbox" id="skip-business-website" />
-        <label for="skip-business-website" style={{ fontSize: '17px' }}>I am ready to submit</label>
-    </div>             
-    <p>Please review the confirmed details above and ensure that all information is accurate.</p>
-            <p>If everything is correct, click the "Submit Application" button to complete the process.</p>
-            <button class="btn btn-primary">Submit</button>
-        </div>
-    </div>       
-    </div>
-        </div>
+                        <div class="row justify-content-center">
+                        <div class="col-md-6">
+                                <div class="input-item input-with-label">
+                                    <label for="submit-application-business" class="input-item-label">Confirm Details and Submit</label>
+                                    <div class="input-note">
+                                <input type="checkbox" id="skip-business-website" />
+                                <label for="skip-business-website" style={{ fontSize: '17px' }}>I am ready to submit</label>
+                            </div>             
+                            <p>Please review the confirmed details above and ensure that all information is accurate.</p>
+                                    <p>If everything is correct, click the "Submit Application" button to complete the process.</p>
+                                    <button class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>       
+                            </div>
+                                </div>
 
                             </div>
                         </div>

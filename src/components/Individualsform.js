@@ -36,8 +36,8 @@ import { useDropzone } from 'react-dropzone';
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-xl-7 text-center">
-                    <h2 class="page-title">Begin your ID-Verification</h2>
-                    <p class="large">Upload the Documents carefully.</p>
+                    <h2 class="page-title">Individual ID Verification</h2>
+                    <p class="large">Begin your Individual ID verification and Upload the correct Documents.</p>
                 </div>
             </div>
         </div>
@@ -53,7 +53,7 @@ import { useDropzone } from 'react-dropzone';
                                     <div class="step-number">01</div>
                                     <div class="step-head-text">
                                         <h4>Personal Informaion</h4>
-                                        <p>Your personal information required for identification</p>
+                                        <p>Your personal information is required for identification</p>
                                     </div>
                                 </div>
                             </div>
