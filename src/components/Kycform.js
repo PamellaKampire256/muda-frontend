@@ -30,7 +30,7 @@ import Select from 'react-select';
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-xl-7 text-center">
-                    <h2 class="page-title">Begin your ID-Verification</h2>
+                    <h2 class="page-title">Begin your Company ID-Verification</h2>
                     <p class="large">Ensure to give accurate Informaion</p>
                 </div>
             </div>
@@ -47,7 +47,7 @@ import Select from 'react-select';
                                     <div class="step-number">01</div>
                                     <div class="step-head-text">
                                         <h4>Personal Informaion</h4>
-                                        <p>Your personal information required for identification</p>
+                                        <p>Your personal information is required for identification</p>
                                     </div>
                                 </div>
                             </div>
