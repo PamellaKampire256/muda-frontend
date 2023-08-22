@@ -38,13 +38,13 @@ import Select from 'react-select';
     </div>
     <div class="page-content">
         <div class="container">
-            <div class="row justify-content-center">
+            <div class="row">
                 <div class="col-lg-12 col-xl-10">
                     <div class="kyc-form-steps card mx-lg-4">
                         <div class="form-step form-step1">
                             <div class="form-step-head card-innr">
                                 <div class="step-head">
-                                    <div class="step-number">01</div>
+                                    <div class="step-number">🔘</div>
                                     <div class="step-head-text">
                                         <h4>Personal Informaion</h4>
                                         <p>Your personal information is required for identification</p>
@@ -57,8 +57,6 @@ import Select from 'react-select';
                                     <p>Please type carefully and fill out the form with valid Informaion. Your can’t edit these details once you submitted the form.</p>
                                 </div>
                                 <div class="row"> 
-                        
-
                                              <div class="col-md-6">
                                                 <div class="input-item input-with-label">
                                                     <label for="business-name" class="input-item-label" style={{ fontSize: '17px' }}>Business Name</label>
@@ -197,24 +195,12 @@ import Select from 'react-select';
                                     <label for="trade-references" class="input-item-label" style={{ fontSize: '17px' }}>Trade References or Business References</label>
                                     <textarea class="input-bordered" id="trade-references" name="trade-references" placeholder="Provide trade references or business references"></textarea>
                                 </div>
-                            </div>
-
-                           
+                            </div>                         
                                 </div>
                             </div>
                         </div>
                         <div class="form-step form-step2">
-                            <div class="form-step-head card-innr">
-                                <div class="step-head">
-                                    <div class="step-number">02</div>
-                                    <div class="step-head-text">
-                                        <h4>Document Upload</h4>
-                                        <p>To verify your identity, please upload any of all the required documents</p>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="form-step-fields card-innr">
-                                
                                 <div class="gaps-2x"></div>
                                 <ul class="nav nav-tabs nav-tabs-bordered row flex-wrap guttar-20px" role="tablist">
                                    
@@ -237,83 +223,7 @@ import Select from 'react-select';
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="national-card">
-                                        <h5 class="text-secondary font-bold">To avoid delays when verifying account, Please make sure bellow:</h5>
-                                        <ul class="list-check">
-                                            <li>Chosen credential must not be expaired.</li>
-                                            <li>Document should be good condition and clearly visible.</li>
-                                            <li>Make sure that there is no light glare on the card.</li>
-                                        </ul>
-                                        <div class="gaps-2x"></div>
-                                        <h5 class="font-mid">Upload Here Your National id Front Side</h5>
-                                        <div class="row align-items-center">
-                                            <div class="col-sm-8">
-                                                <div class="upload-box">
-                                                    <div class="upload-zone">
-                                                        <div class="dz-message" data-dz-message="">
-                                                            <span class="dz-message-text">Drag and drop file</span>
-                                                            <span class="dz-message-or">or</span>
-                                                            <button class="btn btn-primary">SELECT</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4 d-none d-sm-block">
-                                                <div class="mx-md-4">
-                                                    <img src="assets/images/vector-id-front.png" alt="vector" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="gaps-3x"></div>
-                                        <h5 class="font-mid">Upload Here Your National id Back Side</h5>
-                                        <div class="row align-items-center">
-                                            <div class="col-sm-8">
-                                                <div class="upload-box">
-                                                    <div class="upload-zone">
-                                                        <div class="dz-message" data-dz-message="">
-                                                            <span class="dz-message-text">Drag and drop file</span>
-                                                            <span class="dz-message-or">or</span>
-                                                            <button class="btn btn-primary">SELECT</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4 d-none d-sm-block">
-                                                <div class="mx-md-4">
-                                                    <img src="assets/images/vector-id-back.png" alt="vector" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="driver-licence">
-                                        <h5 class="text-secondary font-bold">To avoid delays when verifying account, Please make sure bellow:</h5>
-                                        <ul class="list-check">
-                                            <li>Chosen credential must not be expaired.</li>
-                                            <li>Document should be good condition and clearly visible.</li>
-                                            <li>Make sure that there is no light glare on the card.</li>
-                                        </ul>
-                                        <div class="gaps-2x"></div>
-                                        <h5 class="font-mid">Upload Here Your Driving Licence Copy</h5>
-                                        <div class="row align-items-center">
-                                            <div class="col-sm-8">
-                                                <div class="upload-box">
-                                                    <div class="upload-zone">
-                                                        <div class="dz-message" data-dz-message="">
-                                                            <span class="dz-message-text">Drag and drop file</span>
-                                                            <span class="dz-message-or">or</span>
-                                                            <button class="btn btn-primary">SELECT</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4 d-none d-sm-block">
-                                                <div class="mx-md-4">
-                                                    <img src="assets/images/vector-licence.png" alt="vector" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    </div>                                 
                                 </div>
                             </div>
                         </div>

@@ -18,7 +18,7 @@ function Emailverified() {
             <div class="page-ath-footer">
                 <ul class="footer-links">
                     <li><a href="/#/policy">Privacy Policy</a></li> 
-                    <li>&copy; 2019 Project Jaguar.</li>
+                    <li>&copy; 2023 Project MUDA KYC.</li>
                 </ul>
             </div>
         </div>

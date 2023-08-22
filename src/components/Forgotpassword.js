@@ -1,10 +1,9 @@
 import React from 'react'
-// import Navbar from "./Navbar"
 
 function Forgotpassword() {
   return (
     <div>
-     {/* <Navbar />     */}
+     
  <div class="page-ath-wrap" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
         <div class="page-ath-content">
             <div class="page-ath-header">
@@ -27,21 +26,7 @@ function Forgotpassword() {
                     <div class="gaps-2x"></div>
                 </form>
             </div>
-            {/* <div class="page-ath-footer">
-                <ul class="footer-links">
-                    <li><a href="/#/policy">Privacy Policy</a></li>
-                    <li><a href="regular-page.html">Terms</a></li>
-                    <li>&copy; MUDA Project.</li>
-                </ul>
-            </div> */}
-        </div>
-        {/* <div class="page-ath-gfx">
-           <div class="w-100 d-flex justify-content-center">
-               <div class="col-md-8 col-xl-5">
-                   <img src="assets/images/ath-gfx.png" alt="image" />
-               </div>
-           </div>            
-        </div> */}
+         </div> 
     </div>
     </div>
   )
