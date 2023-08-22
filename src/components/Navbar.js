@@ -29,13 +29,6 @@ function Navbar() {
                             <span class="user-welcome d-none d-lg-inline-block">Welcome! New User</span>
                             <a class="toggle-tigger user-thumb" href="#"><em class="ti ti-user">  </em></a>
                             <div class="toggle-class dropdown-content dropdown-content-right dropdown-arrow-right user-dropdown">
-                                {/* <div>
-
-                                 <div>
-                                    
-                                    </div>   
-
-                                </div> */}
                                 <ul class="user-links">
                                     <li><a href="/#/profile"><i class="ti ti-id-badge"></i>My Profile</a></li> </ul>
                                 <ul class="user-links bg-light">
@@ -55,33 +48,19 @@ function Navbar() {
                             <ul class="navbar-dropdown">
                                
                                 <li class="has-dropdown"><Link class="drop-toggle" href="#">KYC Panel</Link>
-                                    <ul class="navbar-dropdown">
-                                        {/* <li><a href="/#/kycapplication">KYC Default</a></li>
-                                        <li><a href="/#/kycform">KYC Form</a></li>
-                                        <li><a href="/#/thankyou">KYC Thank You</a></li> */}
+                                    <ul class="navbar-dropdown">                                  
                                         <li><a href="/#/kyclist">KYC Lists - Admin</a></li>
                                         <li><a href="/#/kycdetails">KYC Details - Admin</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-dropdown"><Link class="drop-toggle" href="#">User Pages</Link>
                                     <ul class="navbar-dropdown">
-                                        {/* <li><a href="/#/profile">Profile Page</a></li> */}
                                         <li><a href="/#/userlist">User List - Admin</a></li>
                                         <li><a href="/#/userdetails">User Details - Admin</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-dropdown"><Link className="drop-toggle" to="#">Misc Page</Link>
                                     <ul class="navbar-dropdown">
-                                        {/* <li><a href="/#/error">404 Error</a></li>
-                                        <li><a href="/#">Sign In / Login</a></li>
-                                        <li><a href="/#/register">Sign Up / Registration</a></li>
-                                        <li><a href="/#/signupsuccess">Signup Success</a></li>
-                                        <li><a href="/#/emailverified">Email Verified</a></li>
-                                        <li><a href="/#/forgotpassword">Forgot Password</a></li>
-                                        <li><a href="/#/faqpage">Faq Page</a></li>
-                                        <li><a href="/#/privacy">Privacy Policy</a></li>
-                                        <li><a href="regular-page-v2.html">Regular Page - v2</a></li>
-                                        <li><a href="/#/thank-you">Thank You <span class="badge badge-warning">New</span></a></li> */}
                                         <li><a href="/"><i class="ti ti-power-off"></i>Logout</a></li>
                                     </ul>
                                 </li>

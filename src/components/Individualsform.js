@@ -50,7 +50,7 @@ import { useDropzone } from 'react-dropzone';
                         <div class="form-step form-step1">
                             <div class="form-step-head card-innr">
                                 <div class="step-head">
-                                    <div class="step-number">01</div>
+                                    <div class="step-number">🔘</div>
                                     <div class="step-head-text">
                                         <h4>Personal Informaion</h4>
                                         <p>Your personal information is required for identification</p>
@@ -64,138 +64,128 @@ import { useDropzone } from 'react-dropzone';
                                 </div>
                                 <div class="row"> 
                        
-                            <div class="col-md-6">
-    <div class="input-item input-with-label">
-        <label class="input-item-label">Passport (photo page)</label>
-        <input class="input-bordered" type="file" placeholder="Upload Passport" />
-    </div>
-</div>
+                                                    <div class="col-md-6">
+                            <div class="input-item input-with-label">
+                                <label class="input-item-label">Passport (photo page)</label>
+                                <input class="input-bordered" type="file" placeholder="Upload Passport" />
+                            </div>
+                        </div>
 
-<div class="col-md-6">
-    <div class="input-item input-with-label">
-        <label class="input-item-label">National ID card (both sides) OR Driver's license (both sides)</label>
-        <input class="input-bordered" type="file" placeholder="Upload ID Card or Driver's License" />
-    </div>
-</div>
+                        <div class="col-md-6">
+                            <div class="input-item input-with-label">
+                                <label class="input-item-label">National ID card (both sides) OR Driver's license (both sides)</label>
+                                <input class="input-bordered" type="file" placeholder="Upload ID Card or Driver's License" />
+                            </div>
+                        </div>
 
-<div class="col-md-6">
-    <div class="input-item input-with-label">
-        <label class="input-item-label">Utility bill or bank statement showing the address</label>
-        <input class="input-bordered" type="file" placeholder="Upload Utility Bill or Bank Statement" />
-    </div>
-</div>
+                        <div class="col-md-6">
+                            <div class="input-item input-with-label">
+                                <label class="input-item-label">Utility bill or bank statement showing the address</label>
+                                <input class="input-bordered" type="file" placeholder="Upload Utility Bill or Bank Statement" />
+                            </div>
+                        </div>
 
-<div class="col-md-6">
-    <div class="input-item input-with-label">
-        <label class="input-item-label">A recent photograph</label>
-        <input class="input-bordered" type="file" placeholder="Upload Photograph" />
-    </div>
-</div>
-
-
-<div class="col-md-6">
-    <div class="input-item input-with-label">
-        <label class="input-item-label">Business License</label>
-        <input class="input-bordered" type="file" placeholder="Upload Business License" />
-    </div>
-</div>
+                        <div class="col-md-6">
+                            <div class="input-item input-with-label">
+                                <label class="input-item-label">A recent photograph</label>
+                                <input class="input-bordered" type="file" placeholder="Upload Photograph" />
+                            </div>
+                        </div>
 
 
-<div class="col-md-6">
-    <div class="input-item input-with-label">
-        <label class="input-item-label">Shareholder register or equivalent showing ownership details</label>
-        <input class="input-bordered" type="file" placeholder="Upload Shareholder Register" />
-    </div>
-</div>
+                        <div class="col-md-6">
+                            <div class="input-item input-with-label">
+                                <label class="input-item-label">Business License</label>
+                                <input class="input-bordered" type="file" placeholder="Upload Business License" />
+                            </div>
+                        </div>
 
 
-<div class="col-md-6">
-    <div class="input-item input-with-label">
-        <label class="input-item-label">List of Board of Directors or equivalent document</label>
-        <input class="input-bordered" type="file" placeholder="Upload Board of Directors Document" />
-    </div>
-</div>
+                        <div class="col-md-6">
+                            <div class="input-item input-with-label">
+                                <label class="input-item-label">Shareholder register or equivalent showing ownership details</label>
+                                <input class="input-bordered" type="file" placeholder="Upload Shareholder Register" />
+                            </div>
+                        </div>
 
 
-<div class="col-md-6">
-    <div class="input-item input-with-label">
-        <label class="input-item-label">Utility bill or bank statement showing the business address</label>
-        <input class="input-bordered" type="file" placeholder="Upload Business Address Document" />
-    </div>
-</div>
+                        <div class="col-md-6">
+                            <div class="input-item input-with-label">
+                                <label class="input-item-label">List of Board of Directors or equivalent document</label>
+                                <input class="input-bordered" type="file" placeholder="Upload Board of Directors Document" />
+                            </div>
+                        </div>
 
 
-<div class="col-md-6">
-    <div class="input-item input-with-label">
-        <label class="input-item-label">Tax Identification Number (TIN) certificate or equivalent</label>
-        <input class="input-bordered" type="file" placeholder="Upload TIN Certificate" />
-    </div>
-</div>
+                        <div class="col-md-6">
+                            <div class="input-item input-with-label">
+                                <label class="input-item-label">Utility bill or bank statement showing the business address</label>
+                                <input class="input-bordered" type="file" placeholder="Upload Business Address Document" />
+                            </div>
+                        </div>
 
 
-<div class="col-md-6">
-    <div class="input-item input-with-label">
-        <label class="input-item-label">Financial Statements (if required)</label>
-        <input class="input-bordered" type="file" placeholder="Upload Financial Statements" />
-        <div class="input-note">
-         <input type="checkbox" id="skip-financial-statements" />
-         <label for="skip-financial-statements" style={{ fontSize: '17px' }}>Skip this</label>
-      </div>
-    </div>
-</div>
+                        <div class="col-md-6">
+                            <div class="input-item input-with-label">
+                                <label class="input-item-label">Tax Identification Number (TIN) certificate or equivalent</label>
+                                <input class="input-bordered" type="file" placeholder="Upload TIN Certificate" />
+                            </div>
+                        </div>
 
 
-<div class="col-md-6">
-    <div class="input-item input-with-label">
-        <label class="input-item-label">Beneficial Ownership Document (if applicable)</label>
-        <input class="input-bordered" type="file" placeholder="Upload Beneficial Ownership Document" />
-        <div class="input-note">
-         <input type="checkbox" id="skip-beneficial-ownership-document" />
-         <label for="skip-beneficial-ownership-document" style={{ fontSize: '17px' }}>Skip this</label>
-      </div>
-    </div>
-</div>
+                        <div class="col-md-6">
+                            <div class="input-item input-with-label">
+                                <label class="input-item-label">Financial Statements (if required)</label>
+                                <input class="input-bordered" type="file" placeholder="Upload Financial Statements" />
+                                <div class="input-note">
+                                <input type="checkbox" id="skip-financial-statements" />
+                                <label for="skip-financial-statements" style={{ fontSize: '17px' }}>Skip this</label>
+                            </div>
+                            </div>
+                        </div>
 
 
-<div class="col-md-6">
-    <div class="input-item input-with-label">
-        <label class="input-item-label">Trade Licenses (for specific industries or activities)</label>
-        <input class="input-bordered" type="file" placeholder="Upload Trade Licenses" />
-    </div>
-</div>
+                        <div class="col-md-6">
+                            <div class="input-item input-with-label">
+                                <label class="input-item-label">Beneficial Ownership Document (if applicable)</label>
+                                <input class="input-bordered" type="file" placeholder="Upload Beneficial Ownership Document" />
+                                <div class="input-note">
+                                <input type="checkbox" id="skip-beneficial-ownership-document" />
+                                <label for="skip-beneficial-ownership-document" style={{ fontSize: '17px' }}>Skip this</label>
+                            </div>
+                            </div>
+                        </div>
 
 
-<div class="col-md-6">
-    <div class="input-item input-with-label">
-        <label class="input-item-label">Passport or National ID of authorized signatories, major shareholders, and key management personnel</label>
-        <input class="input-bordered" type="file" placeholder="Upload Passport or National ID" />
-    </div>
-</div>
+                        <div class="col-md-6">
+                            <div class="input-item input-with-label">
+                                <label class="input-item-label">Trade Licenses (for specific industries or activities)</label>
+                                <input class="input-bordered" type="file" placeholder="Upload Trade Licenses" />
+                            </div>
+                        </div>
 
 
-<div class="col-md-6">
-    <div class="input-item input-with-label">
-        <label class="input-item-label">Photograph of business premises or storefront (in some cases)</label>
-        <input class="input-bordered" type="file" placeholder="Upload Photograph of Business Premises" />
-    </div>
-</div>
+                        <div class="col-md-6">
+                            <div class="input-item input-with-label">
+                                <label class="input-item-label">Passport or National ID of authorized signatories, major shareholders, and key management personnel</label>
+                                <input class="input-bordered" type="file" placeholder="Upload Passport or National ID" />
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <div class="input-item input-with-label">
+                                <label class="input-item-label">Photograph of business premises or storefront (in some cases)</label>
+                                <input class="input-bordered" type="file" placeholder="Upload Photograph of Business Premises" />
+                            </div>
+                        </div>
 
                            
                                 </div>
                             </div>
                         </div>
                         <div class="form-step form-step2">
-                            <div class="form-step-head card-innr">
-                                <div class="step-head">
-                                    <div class="step-number">02</div>
-                                    <div class="step-head-text">
-                                        <h4>Document Upload</h4>
-                                        <p>To verify your identity, please upload any of all the required documents</p>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="form-step-fields card-innr">
-                                
                                 <div class="gaps-2x"></div>
                                 <ul class="nav nav-tabs nav-tabs-bordered row flex-wrap guttar-20px" role="tablist">
                                    
@@ -204,7 +194,7 @@ import { useDropzone } from 'react-dropzone';
                                     <div class="tab-pane fade show active" id="passport">
                                         <h5 class="text-secondary font-bold">To avoid delays when verifying your account, Please make sure that:</h5>
                                         <ul class="list-check">
-                                            <li>Chosen credential must not be expaired.</li>
+                                            <li>Chosen credential must not be expired.</li>
                                             <li>Document should be good condition and clearly visible.</li>
                                             <li>Make sure that there is no light glare on the card.</li>
                                         </ul>
@@ -215,82 +205,6 @@ import { useDropzone } from 'react-dropzone';
                                             <div class="col-sm-4 d-none d-sm-block">
                                                 <div class="mx-md-4">
                                                     <img src="assets/images/vector-passport.png" alt="vector" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="national-card">
-                                        <h5 class="text-secondary font-bold">To avoid delays when verifying account, Please make sure bellow:</h5>
-                                        <ul class="list-check">
-                                            <li>Chosen credential must not be expaired.</li>
-                                            <li>Document should be good condition and clearly visible.</li>
-                                            <li>Make sure that there is no light glare on the card.</li>
-                                        </ul>
-                                        <div class="gaps-2x"></div>
-                                        <h5 class="font-mid">Upload Here Your National id Front Side</h5>
-                                        <div class="row align-items-center">
-                                            <div class="col-sm-8">
-                                                <div class="upload-box">
-                                                    <div class="upload-zone">
-                                                        <div class="dz-message" data-dz-message="">
-                                                            <span class="dz-message-text">Drag and drop file</span>
-                                                            <span class="dz-message-or">or</span>
-                                                            <button class="btn btn-primary">SELECT</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4 d-none d-sm-block">
-                                                <div class="mx-md-4">
-                                                    <img src="assets/images/vector-id-front.png" alt="vector" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="gaps-3x"></div>
-                                        <h5 class="font-mid">Upload Here Your National id Back Side</h5>
-                                        <div class="row align-items-center">
-                                            <div class="col-sm-8">
-                                                <div class="upload-box">
-                                                    <div class="upload-zone">
-                                                        <div class="dz-message" data-dz-message="">
-                                                            <span class="dz-message-text">Drag and drop file</span>
-                                                            <span class="dz-message-or">or</span>
-                                                            <button class="btn btn-primary">SELECT</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4 d-none d-sm-block">
-                                                <div class="mx-md-4">
-                                                    <img src="assets/images/vector-id-back.png" alt="vector" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="driver-licence">
-                                        <h5 class="text-secondary font-bold">To avoid delays when verifying account, Please make sure bellow:</h5>
-                                        <ul class="list-check">
-                                            <li>Chosen credential must not be expired.</li>
-                                            <li>Document should be good condition and clearly visible.</li>
-                                            <li>Make sure that there is no light glare on the card.</li>
-                                        </ul>
-                                        <div class="gaps-2x"></div>
-                                        <h5 class="font-mid">Upload Here Your Driving Licence Copy</h5>
-                                        <div class="row align-items-center">
-                                            <div class="col-sm-8">
-                                                <div class="upload-box">
-                                                    <div class="upload-zone">
-                                                        <div class="dz-message" data-dz-message="">
-                                                            <span class="dz-message-text">Drag and drop file</span>
-                                                            <span class="dz-message-or">or</span>
-                                                            <button class="btn btn-primary">SELECT</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4 d-none d-sm-block">
-                                                <div class="mx-md-4">
-                                                    <img src="assets/images/vector-licence.png" alt="vector" />
                                                 </div>
                                             </div>
                                         </div>

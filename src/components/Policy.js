@@ -5,23 +5,12 @@ function Policy() {
   return (
     <div>
         <Navbar />
-        <div class="topbar-wrap">
-        <div class="topbar is-sticky">
-            <div class="container">
-                <div class="d-flex justify-content-center">
-                    <a class="topbar-logo" href="regular-page-v2.html">
-                       <img src="assets/images/logo-light2x.png" srcset="assets/images/logo-light2x.png 2x" alt="logo" />
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="page-header">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-xl-7 text-center">
                     <h2 class="page-title">Privacy Policy</h2>
-                    <p class="large">We care our customer privacy' &amp; inside content remove heading 'Privacy Policy</p>
+                    <p class="large">We care about our customer's privacy &amp; inside Informaion.</p>
                 </div>
             </div>
         </div>
@@ -66,14 +55,6 @@ function Policy() {
                     <div class="d-flex justify-content-between justify-content-md-end align-items-center guttar-25px pdt-0-5x pdb-0-5x">
                         <div class="copyright-text">&copy; MUDA KYC Project.</div>
                         <div class="lang-switch relative">
-                            {/* <a href="#" class="lang-switch-btn toggle-tigger">En <em class="ti ti-angle-up"></em></a>
-                            <div class="toggle-class dropdown-content dropdown-content-up">
-                                <ul class="lang-list">
-                                    <li><a href="#">Fr</a></li>
-                                    <li><a href="#">Bn</a></li>
-                                    <li><a href="#">Lt</a></li>
-                                </ul>
-                            </div> */}
                         </div>
                     </div>
                 </div>
