@@ -26,7 +26,7 @@ import Select from 'react-select';
     return (
             <div>
             <Navbar />
-<div class="page-header page-header-kyc">
+{/* <div class="page-header page-header-kyc">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-xl-7 text-center">
@@ -35,27 +35,14 @@ import Select from 'react-select';
                 </div>
             </div>
         </div>
-    </div>
+    </div> */}
     <div class="page-content">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-xl-10">
                     <div class="kyc-form-steps card mx-lg-4">
                         <div class="form-step form-step1">
-                            <div class="form-step-head card-innr">
-                                <div class="step-head">
-                                    <div class="step-number">🔘</div>
-                                    <div class="step-head-text">
-                                        <h4>Personal Informaion</h4>
-                                        <p>Your personal information is required for identification</p>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="form-step-fields card-innr">
-                                <div class="note note-plane note-light-alt note-md pdb-1x">
-                                    <em class="fas fa-info-circle"></em>
-                                    <p>Please type carefully and fill out the form with valid Informaion. Your can’t edit these details once you submitted the form.</p>
-                                </div>
                                 <div class="row"> 
                                              <div class="col-md-6">
                                                 <div class="input-item input-with-label">
@@ -83,41 +70,6 @@ import Select from 'react-select';
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
-                                <div class="input-item input-with-label">
-                                    <label for="business-mailing-address" class="input-item-label" style={{ fontSize: '17px' }}>Business Mailing Address (if different from registered address)</label>
-                                    <input class="input-bordered" type="text" id="business-mailing-address" name="business-mailing-address" placeholder="Your Business Mailing Address" />
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="input-item input-with-label">
-                                    <label for="date-of-incorporation" class="input-item-label" style={{ fontSize: '17px' }}>Date of Incorporation</label>
-                                    <DatePicker
-                                        className="input-bordered date-picker-dob"
-                                        selected={dateOfBirth}
-                                        onChange={(date) => setDateOfBirth(date)}
-                                        dateFormat="yyyy-MM-dd"
-                                        placeholderText="(Select a date)"
-                                    />
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="input-item input-with-label">
-                                    <label for="business-type" class="input-item-label" style={{ fontSize: '17px' }}>Business Type (e.g., Corporation, Partnership, Sole Proprietorship)</label>
-                                    <input class="input-bordered" type="text" id="business-type" name="business-type" placeholder="Your Business Type" />
-                                </div>
-                            </div>
-
-                            <div class="col-6">
-                                <div class="input-item input-with-label">
-                                    <label for="board-of-directors" class="input-item-label" style={{ fontSize: '17px' }}>Board of Directors and Key Management Personnel Details</label>
-                                    <textarea class="input-bordered" id="board-of-directors" name="board-of-directors" placeholder="Provide details about board of 
-                                    directors and key management personnel"></textarea>
-                                </div>
-                            </div>
-
                               <div class="col-md-6">
                                 <div class="input-item input-with-label">
                                   <label for="phone-number" class="input-item-label">Phone Number</label>
@@ -140,13 +92,6 @@ import Select from 'react-select';
                                 <div class="input-item input-with-label">
                                     <label for="tax-identification-number-business" class="input-item-label" style={{ fontSize: '17px' }}>Tax Identification Number (TIN) or equivalent</label>
                                     <input class="input-bordered" type="text" id="tax-identification-number-business" name="tax-identification-number-business" placeholder="Your TIN or equivalent" />
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="input-item input-with-label">
-                                    <label for="financial-statements" class="input-item-label" style={{ fontSize: '17px' }}>Financial Statements (e.g., balance sheet, income statement)</label>
-                                    <input class="input-bordered" type="file" id="financial-statements" name="financial-statements" placeholder="Upload financial statements" />
                                 </div>
                             </div>
 
@@ -178,13 +123,6 @@ import Select from 'react-select';
 
                             <div class="col-md-6">
                                 <div class="input-item input-with-label">
-                                    <label for="proof-of-address-business" class="input-item-label" style={{ fontSize: '17px' }}>Proof of Address (e.g. utility bill, bank statement for the business)</label>
-                                    <input class="input-bordered" type="file" id="proof-of-address-business" name="proof-of-address-business" placeholder="(e.g. utility bill, bank statement)" />
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="input-item input-with-label">
                                     <label for="expected-transactions" class="input-item-label" style={{ fontSize: '17px' }}>Expected Volume and Nature of Transactions</label>
                                     <textarea class="input-bordered" id="expected-transactions" name="expected-transactions" placeholder="Describe the expected volume and nature of transactions"></textarea>
                                 </div>
@@ -199,7 +137,7 @@ import Select from 'react-select';
                                 </div>
                             </div>
                         </div>
-                        <div class="form-step form-step2">
+                        {/* <div class="form-step form-step2">
                             <div class="form-step-fields card-innr">
                                 <div class="gaps-2x"></div>
                                 <ul class="nav nav-tabs nav-tabs-bordered row flex-wrap guttar-20px" role="tablist">
@@ -226,20 +164,20 @@ import Select from 'react-select';
                                     </div>                                 
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                        
                         <div class="form-step form-step-final">
                             <div class="form-step-fields card-innr">
-                                <div class="input-item">
+                                {/* <div class="input-item">
                                     <input class="input-checkbox input-checkbox-md" id="term-condition" type="checkbox" />
                                     <label for="term-condition">I have read the <a href="#">Terms of Condition</a> and <a href="#">Privary Policy.</a></label>
                                 </div>
                                 <div class="input-item">
                                     <input class="input-checkbox input-checkbox-md" id="info-currect" type="checkbox" />
                                     <label for="info-currect">All the personal information I have entered is correct.</label>
-                                </div>
-                                <div class="gaps-1x"></div>
-                                <Link to="/thankyou" class="btn btn-primary">Process for Verify</Link>
+                                </div> */}
+                                {/* <div class="gaps-1x"></div>
+                                <Link to="/thankyou" class="btn btn-primary">Verify</Link> */}
                             </div>
                         </div>
                     </div>
