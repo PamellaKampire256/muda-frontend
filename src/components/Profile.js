@@ -9,6 +9,7 @@ import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
 
 
+
 function Profile() {
        const navigate =useNavigate();
        const handleProfile = () =>{
@@ -24,7 +25,13 @@ function Profile() {
         label: countries[countryCode].name,
     }));
 
-    
+    const [uploadedDocuments, setUploadedDocuments] = useState([]);
+
+    const handleDocumentUpload = (event) => {
+        const newDocument = event.target.files[0];
+        setUploadedDocuments([...uploadedDocuments, newDocument]);
+    };
+
   return (
     <div>
         <Navbar />
@@ -64,8 +71,9 @@ function Profile() {
                                             </div>
                                             <div class="col-md-6">
                                             <div class="input-item input-with-label">
-                                        <label for="date-of-birth" class="input-item-label"style= {{ fontSize: '17px' }}>Date of Birth</label>
-                                                                <DatePicker
+                                        <label for="date-of-birth" class="input-item-label"style= {{ fontSize: '17px', display: 'block' }}>Date of Birth</label>
+                                                                <DatePicker 
+                                                                
                                                         className="input-bordered date-picker-dob"
                                                         selected={dateOfBirth}
                                                         onChange={(date) => setDateOfBirth(date)}
@@ -86,12 +94,7 @@ function Profile() {
                                                 <input class="input-bordered" type="text" id="address" name="address" placeholder="Your Address" />
                                             </div>
                                         </div>
-                                    <div class="col-md-6">
-                                                <div class="input-item input-with-label">
-                                                    <label for="proof-of-address" class="input-item-label"style= {{ fontSize: '17px' }}>Proof of Address (e.g. utility bill, bank statement for the business)</label>
-                                                    <input class="input-bordered" type="file" id="proof-of-address" name="proof-of-address" placeholder="(e.g. utility bill, bank statement)" />
-                                                </div>
-                                            </div>
+                                   
                                             <div class="col-md-6">
                                         <div class="input-item input-with-label">
                                             <label for="identification-number" class="input-item-label" style={{ fontSize: '17px' }}>Identification Number</label>
@@ -139,32 +142,15 @@ function Profile() {
                                 </div>
                                 <div class="tab-pane fade" id="company-details">
                                 
-                                    <div class="row">
-                                        <div class="form-step-head card-innr">
-                                <div class="step-head">
-                                    <div class="step-number">01</div>
-                                    <div class="step-head-text">
-                                   <h4><u>For Companies</u></h4>
-                                    
-                                        <p>Please provide accurate and complete information for the company form.</p>
-                                         <p>The information you provide will be used for verification purposes.</p>
-                                         <p>Your personal information is required for identification</p>
-                                    </div>
-                                </div>
-                            </div>     
-                            </div>
                             
     <div class="page-content">
         <div class="container">
             <div class="row">
-                <div class="col-lg-16 col-xl-12">
+                <div class="col-lg-16 col-xl-16">
                     <div class="kyc-form-steps card mx-lg-4">
                         <div class="form-step form-step1">
                             <div class="form-step-fields card-innr">
-                                <div class="note note-plane note-light-alt note-md pdb-1x">
-                                    <em class="fas fa-info-circle"></em>
-                                    <p>Please type carefully and fill out the form with valid Informaion. You can’t edit these details once you submitted the form.</p>
-                                </div>
+                                
                                 <div class="row"> 
                                              <div class="col-md-6">
                                                 <div class="input-item input-with-label">
@@ -192,40 +178,27 @@ function Profile() {
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
+                            {/* <div class="col-md-6">
                                 <div class="input-item input-with-label">
                                     <label for="business-mailing-address" class="input-item-label" style={{ fontSize: '17px' }}>Business Mailing Address (if different from registered address)</label>
                                     <input class="input-bordered" type="text" id="business-mailing-address" name="business-mailing-address" placeholder="Your Business Mailing Address" />
                                 </div>
-                            </div>
+                            </div> */}
 
-                            <div class="col-md-6">
-                                <div class="input-item input-with-label">
-                                    <label for="date-of-incorporation" class="input-item-label" style={{ fontSize: '17px' }}>Date of Incorporation</label>
-                                    <DatePicker
-                                        className="input-bordered date-picker-dob"
-                                        selected={dateOfBirth}
-                                        onChange={(date) => setDateOfBirth(date)}
-                                        dateFormat="yyyy-MM-dd"
-                                        placeholderText="(Select a date)"
-                                    />
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
+                            {/* <div class="col-md-6">
                                 <div class="input-item input-with-label">
                                     <label for="business-type" class="input-item-label" style={{ fontSize: '17px' }}>Business Type (e.g., Corporation, Partnership, Sole Proprietorship)</label>
                                     <input class="input-bordered" type="text" id="business-type" name="business-type" placeholder="Your Business Type" />
                                 </div>
-                            </div>
+                            </div> */}
 
-                            <div class="col-6">
+                            {/* <div class="col-6">
                                 <div class="input-item input-with-label">
                                     <label for="board-of-directors" class="input-item-label" style={{ fontSize: '17px' }}>Board of Directors and Key Management Personnel Details</label>
                                     <textarea class="input-bordered" id="board-of-directors" name="board-of-directors" placeholder="Provide details about board of 
                                     directors and key management personnel"></textarea>
                                 </div>
-                            </div>
+                            </div> */}
 
                               <div class="col-md-6">
                                 <div class="input-item input-with-label">
@@ -252,12 +225,12 @@ function Profile() {
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
+                            {/* <div class="col-md-6">
                                 <div class="input-item input-with-label">
                                     <label for="financial-statements" class="input-item-label" style={{ fontSize: '17px' }}>Financial Statements (e.g., balance sheet, income statement)</label>
                                     <input class="input-bordered" type="file" id="financial-statements" name="financial-statements" placeholder="Upload financial statements" />
                                 </div>
-                            </div>
+                            </div> */}
 
                             <div class="col-md-6">
                                 <div class="input-item input-with-label">
@@ -287,13 +260,6 @@ function Profile() {
 
                             <div class="col-md-6">
                                 <div class="input-item input-with-label">
-                                    <label for="proof-of-address-business" class="input-item-label" style={{ fontSize: '17px' }}>Proof of Address (e.g. utility bill, bank statement for the business)</label>
-                                    <input class="input-bordered" type="file" id="proof-of-address-business" name="proof-of-address-business" placeholder="(e.g. utility bill, bank statement)" />
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="input-item input-with-label">
                                     <label for="expected-transactions" class="input-item-label" style={{ fontSize: '17px' }}>Expected Volume and Nature of Transactions</label>
                                     <textarea class="input-bordered" id="expected-transactions" name="expected-transactions" placeholder="Describe the expected volume and nature of transactions"></textarea>
                                 </div>
@@ -310,51 +276,14 @@ function Profile() {
                                 </div>
                             </div>
                         </div>
-                        <div class="form-step form-step2"> 
-                            <div class="form-step-fields card-innr">
-                                
-                                <div class="gaps-2x"></div>
-                                <ul class="nav nav-tabs nav-tabs-bordered row flex-wrap guttar-20px" role="tablist">
-                                   
-                                </ul>
-                                <div class="tab-content" id="myTabContent">
-                                    <div class="tab-pane fade show active" id="passport">
-                                        <h5 class="text-secondary font-bold">To avoid delays when verifying your account, Please make sure that:</h5>
-                                        <ul class="list-check">
-                                            <li>Chosen credential must not be expired.</li>
-                                            <li>Document should be good condition and clearly visible.</li>
-                                            <li>Make sure that there is no light glare on the card.</li>
-                                        </ul>
-                                        <div class="gaps-2x"></div>
-                                       
-                                        <div class="row align-items-center">
-                                           
-                                            <div class="col-sm-4 d-none d-sm-block">
-                                                <div class="mx-md-4">
-                                                    <img src="assets/images/vector-passport.png" alt="vector" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
                        
-                        <div class="form-step form-step-final">
+                        {/* <div class="form-step form-step-final">
                             <div class="form-step-fields card-innr">
-                                <div class="input-item">
-                                    <input class="input-checkbox input-checkbox-md" id="term-condition" type="checkbox" />
-                                    <label for="term-condition">I have read the <a href="#">Terms of Condition</a> and <a href="#">Privary Policy.</a></label>
-                                </div>
-                                <div class="input-item">
-                                    <input class="input-checkbox input-checkbox-md" id="info-currect" type="checkbox" />
-                                    <label for="info-currect">All the personal information I have entered is correct.</label>
-                                </div>
+                               
                                 <div class="gaps-1x"></div>
                                 <Link to="/thankyou" class="btn btn-primary">Process for Verify</Link>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
@@ -370,33 +299,15 @@ function Profile() {
                                 </div>
                                 <div class="tab-pane fade" id="upload-documents">
 
-                                <div class="col-md-6 mb-4">
-                                            
-                                            </div>
-
-                                <div class="form-step-head card-innr">
-                                <div class="step-head">
-                                    <div class="step-number">02</div>
-                                    <div class="step-head-text">
-                                    <h4><u>For Individuals</u></h4>
-                                        <p>Upload with accurate and up-to-date information in this individual form.</p> 
-                                        <p> The details you provide will be used for verification purposes.</p>
-                                        <p>Your personal information is required for identification.</p>
-                                    </div>
-                                </div>
-                            </div>
                            
         <div class="page-content">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-lg-16 col-xl-12">
+                    <div class="col-lg-16 col-xl-16">
                         <div class="kyc-form-steps card mx-lg-4">
                             <div class="form-step form-step1"> 
                                 <div class="form-step-fields card-innr">
-                                    <div class="note note-plane note-light-alt note-md pdb-1x">
-                                        <em class="fas fa-info-circle"></em>
-                                        <p>Please type carefully and fill out the form with valid Informaion. You can’t edit these details once you submitted the form.</p>
-                                    </div>
+                                   
                                 <div class="row"> 
                        
                             <div class="col-md-6">
@@ -409,10 +320,30 @@ function Profile() {
                             <div class="col-md-6">
                                 <div class="input-item input-with-label">
                                     <label class="input-item-label">National ID card (both sides) OR Driver's license (both sides)</label>
-                                    <input class="input-bordered" type="file" placeholder="Upload ID Card or Driver's License" />
-                                    <input class="input-bordered" type="file" placeholder="Upload ID Card or Driver's License" />
+                                    <input
+                        class="input-bordered"
+                        type="file"
+                        accept=".pdf, .jpg, .jpeg, .png"
+                        onChange={handleDocumentUpload}
+                    />
+                    <div>
+                        {uploadedDocuments.map((document, index) => (
+                            <div key={index}>
+                                <p>Document {index + 1}:</p>
+                                <p>Filename: {document.name}</p>
+                                <p>Size: {document.size} bytes</p>
+                            </div>
+                        ))}
+                    </div>
                                 </div>
                             </div>
+
+                            <div class="col-md-6">
+                                        <div class="input-item input-with-label">
+                                            <label for="proof-of-address" class="input-item-label"style= {{ fontSize: '13px' }}>Proof of Address (e.g. utility bill, bank statement for the business)</label>
+                                            <input class="input-bordered" type="file" id="proof-of-address" name="proof-of-address" placeholder="(e.g. utility bill, bank statement)" />
+                                     </div>
+                                 </div>
 
                             <div class="col-md-6">
                                 <div class="input-item input-with-label">
@@ -504,10 +435,21 @@ function Profile() {
                             <div class="col-md-6">
                                 <div class="input-item input-with-label">
                                     <label class="input-item-label">Passport or National ID of authorized signatories, major shareholders, and key management personnel</label>
-                                    <input class="input-bordered" type="file" placeholder="Upload Passport or National ID" />
-                                    <input class="input-bordered" type="file" placeholder="Upload Passport or National ID" />
-                                    <input class="input-bordered" type="file" placeholder="Upload Passport or National ID" />
-                                    <input class="input-bordered" type="file" placeholder="Upload Passport or National ID" />
+                                    <input
+                                class="input-bordered"
+                                type="file"
+                                accept=".pdf, .jpg, .jpeg, .png"
+                                onChange={handleDocumentUpload}
+                            />
+                            <div>
+                                {uploadedDocuments.map((document, index) => (
+                                    <div key={index}>
+                                        <p>Document {index + 1}:</p>
+                                        <p>Filename: {document.name}</p>
+                                        <p>Size: {document.size} bytes</p>
+                                    </div>
+                                ))}
+                            </div>
                                 </div>
                             </div>
 
@@ -523,43 +465,7 @@ function Profile() {
                                 </div>
                             </div>
                         </div>
-                        <div class="form-step form-step2">
-                            <div class="form-step-fields card-innr">
-                                <div class="tab-content" id="myTabContent">
-                                    <div class="tab-pane fade show active" id="passport">
-                                        <h5 class="text-secondary font-bold">To avoid delays when verifying your account, Please make sure that:</h5>
-                                        <ul class="list-check">
-                                            <li>Chosen credential must not be expired.</li>
-                                            <li>Document should be good condition and clearly visible.</li>
-                                            <li>Make sure that there is no light glare on the card.</li>
-                                        </ul>
-                                        <div class="gaps-2x"></div>
-                                        <div class="row align-items-center">
-                                            <div class="col-sm-4 d-none d-sm-block">
-                                                <div class="mx-md-4">
-                                                    <img src="assets/images/vector-passport.png" alt="vector" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         
-                        <div class="form-step form-step-final">
-                            <div class="form-step-fields card-innr">
-                                <div class="input-item">
-                                    <input class="input-checkbox input-checkbox-md" id="term-condition" type="checkbox" />
-                                    <label for="term-condition">I have read the <a href="#">Terms of Condition</a> and <a href="#">Privary Policy.</a></label>
-                                </div>
-                                <div class="input-item">
-                                    <input class="input-checkbox input-checkbox-md" id="info-currect" type="checkbox" />
-                                    <label for="info-currect">All the personal information I have entered is correct.</label>
-                                </div>
-                                <div class="gaps-1x"></div>
-                                <Link to="/thankyou" class="btn btn-primary">Process for Verify</Link>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
