@@ -25,12 +25,22 @@ function Profile() {
         label: countries[countryCode].name,
     }));
 
-    const [uploadedDocuments, setUploadedDocuments] = useState([]);
+    const [uploadedDocument1, setUploadedDocument1] = useState([]);
+const [uploadedDocument2, setUploadedDocument2] = useState([]);
 
-    const handleDocumentUpload = (event) => {
-        const newDocument = event.target.files[0];
-        setUploadedDocuments([...uploadedDocuments, newDocument]);
-    };
+const handleDocument1Upload = (event) => {
+    const files = event.target.files;
+    if (files.length > 0) {
+        setUploadedDocument1([...uploadedDocument1, ...files]);
+    }
+};
+
+const handleDocument2Upload = (event) => {
+    const files = event.target.files;
+    if (files.length > 0) {
+        setUploadedDocument2([...uploadedDocument2, ...files]);
+    }
+};
 
   return (
     <div>
@@ -324,17 +334,19 @@ function Profile() {
                         class="input-bordered"
                         type="file"
                         accept=".pdf, .jpg, .jpeg, .png"
-                        onChange={handleDocumentUpload}
+                        onChange={handleDocument1Upload}
+                        multiple
                     />
                     <div>
-                        {uploadedDocuments.map((document, index) => (
-                            <div key={index}>
-                                <p>Document {index + 1}:</p>
-                                <p>Filename: {document.name}</p>
-                                <p>Size: {document.size} bytes</p>
-                            </div>
-                        ))}
-                    </div>
+                    {uploadedDocument1.map((document, index) => (
+        <div key={index}>
+            <p>Document {index + 1}:</p>
+            <p>Filename: {document.name}</p>
+            <p>Size: {document.size} bytes</p>
+                </div>
+            ))}
+        </div>
+
                                 </div>
                             </div>
 
@@ -439,17 +451,18 @@ function Profile() {
                                 class="input-bordered"
                                 type="file"
                                 accept=".pdf, .jpg, .jpeg, .png"
-                                onChange={handleDocumentUpload}
+                                onChange={handleDocument2Upload}
+                                multiple
                             />
-                            <div>
-                                {uploadedDocuments.map((document, index) => (
-                                    <div key={index}>
-                                        <p>Document {index + 1}:</p>
-                                        <p>Filename: {document.name}</p>
-                                        <p>Size: {document.size} bytes</p>
-                                    </div>
-                                ))}
-                            </div>
+                           <div>
+                           {uploadedDocument2.map((document, index) => (
+        <div key={index}>
+            <p>Document {index + 1}:</p>
+            <p>Filename: {document.name}</p>
+            <p>Size: {document.size} bytes</p>
+        </div>
+    ))}
+        </div>
                                 </div>
                             </div>
 
