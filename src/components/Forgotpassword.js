@@ -7,7 +7,7 @@ function Forgotpassword() {
  <div class="page-ath-wrap" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
         <div class="page-ath-content">
             <div class="page-ath-header">
-                <a href="/#/forgotpassword" class="page-ath-logo"><img src="assets/images/logo.png" srcset="assets/images/logo2x.png 2x" alt="logo" /></a>
+                <a href="/#/forgotpassword" class="page-ath-logo"><img src="assets/images/avatar8.png" srcset="assets/images/avatar9.png 2x" alt="logo" style={{ width: '250px', height: 'auto' }} /></a>
             </div>
             <div class="page-ath-form">
                 <h2 class="page-ath-heading">Reset password <span>If you forgot your password, well, then we’ll email you instructions to reset your password.</span></h2>

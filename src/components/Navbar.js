@@ -21,13 +21,13 @@ function Navbar() {
                             </a>
                         </li>
                     </ul>
-                    <a class="topbar-logo" href="/#/kycform">
-                       <img src="assets/images/logo-light2x.png" srcset="images/logo-light2x.png 2x" alt="logo" />
+                    <a class="topbar-logo" href="/#/kycform" onclick="return false;">
+                       <img src="assets/images/logo-white.png" srcset="images/logo-white2.png 2x" alt="logo" />
                     </a>
                     <ul class="topbar-nav">
                         <li class="topbar-nav-item relative">
-                            <span class="user-welcome d-none d-lg-inline-block">Welcome! New User</span>
-                            <a class="toggle-tigger user-thumb" href="#"><em class="ti ti-user">  </em></a>
+                            <span class="user-welcome d-none d-lg-inline-block">Welcome! Kampire Pamella</span>
+                            <a class="toggle-tigger user-thumb" href="#" style={{ pointerEvents: 'none' }} ><em class="ti ti-user">  </em></a>
                             <div class="toggle-class dropdown-content dropdown-content-right dropdown-arrow-right user-dropdown">
                                 <ul class="user-links">
                                     <li><a href="/#/profile"><i class="ti ti-id-badge"></i>My Profile</a></li> </ul>
