@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useCallback } from 'react'
 import Select from 'react-select';
 import DatePicker from 'react-datepicker'; 
 import 'react-datepicker/dist/react-datepicker.css';
-import { Routes, useNavigate, Route, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
 import { countries } from 'countries-list'; 
 import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
+import Webcam from 'react-webcam';
 
 
 
@@ -42,6 +43,21 @@ const handleDocument2Upload = (event) => {
     }
 };
 
+const webcamRef = useRef(null);
+  const [showCamera, setShowCamera] = useState(false);
+  const [capturedImage, setCapturedImage] = useState(null);
+
+  const capture = useCallback(() => {
+    setShowCamera(true);
+  }, []);
+
+  const handleCaptureClick = useCallback(() => {
+    const imageSrc = webcamRef.current.getScreenshot();
+    setCapturedImage(imageSrc);
+    setShowCamera(false); 
+  }, []);
+
+
   return (
     <div>
         <Navbar />
@@ -63,7 +79,7 @@ const handleDocument2Upload = (event) => {
                                     <a class="nav-link" data-toggle="tab" href="#company-details">Company Informaion</a>    
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#upload-documents">Upload Documents</a>
+                                    <a class="nav-link" data-toggle="tab" href="#upload-documents">User Documents</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" data-toggle="tab" href="#comfirm-details-and-submit">Comfirm Details and Submit</a>
@@ -164,18 +180,25 @@ const handleDocument2Upload = (event) => {
                                 <div class="row"> 
                                              <div class="col-md-6">
                                                 <div class="input-item input-with-label">
-                                                    <label for="business-name" class="input-item-label" style={{ fontSize: '17px' }}>Business Name</label>
-                                                    <input class="input-bordered" type="text" id="business-name" name="business-name" placeholder="Your Business Name" />
+                                                    <label for="business-name" class="input-item-label" style={{ fontSize: '17px' }}>Business License</label>
+                                                    <input class="input-bordered" type="text" id="business-licence" name="business-licence" placeholder="Your Business licence" />
                                                 </div>
                                             </div>
 
                                             <div class="col-md-6">
                                                 <div class="input-item input-with-label">
-                                                    <label for="business-registration-number" class="input-item-label" style={{ fontSize: '17px' }}>Business Registration Number</label>
-                                                    <input class="input-bordered" type="text" id="business-registration-number" name="business-registration-number" placeholder="Your Business Registration Number" />
+                                                    <label class="input-item-label">Trade Licenses (for specific industries or activities)</label>
+                                                    <input class="input-bordered" type="file" placeholder="Upload Trade Licenses" />
                                                 </div>
                                             </div>
+
                                             <div class="col-md-6">
+                                                <div class="input-item input-with-label">
+                                                    <label for="business-registration-number" class="input-item-label" style={{ fontSize: '17px' }}>Company registration certificate</label>
+                                                    <input class="input-bordered" type="text" id="company-registration-certificate" name="company-registration-certicate" placeholder="Your Company registration certificate" />
+                                                </div>
+                                            </div>
+                                            {/* <div class="col-md-6">
                                                 <div class="input-item input-with-label">
                                                     <label for="country-of-incoporation" class="input-item-label" style={{ fontSize: '17px' }}>Country of Incoporation</label>
                                                     <Select options={countryOptions} placeholder="Select your country" />
@@ -186,7 +209,7 @@ const handleDocument2Upload = (event) => {
                                     <label for="registered-business-address" class="input-item-label" style={{ fontSize: '17px' }}>Registered Business Address</label>
                                     <input class="input-bordered" type="text" id="registered-business-address" name="registered-business-address" placeholder="Your Registered Business Address" />
                                 </div>
-                            </div>
+                            </div> */}
 
                             {/* <div class="col-md-6">
                                 <div class="input-item input-with-label">
@@ -210,7 +233,7 @@ const handleDocument2Upload = (event) => {
                                 </div>
                             </div> */}
 
-                              <div class="col-md-6">
+                              {/* <div class="col-md-6">
                                 <div class="input-item input-with-label">
                                   <label for="phone-number" class="input-item-label">Phone Number</label>
                                      <PhoneInput
@@ -233,7 +256,7 @@ const handleDocument2Upload = (event) => {
                                     <label for="tax-identification-number-business" class="input-item-label" style={{ fontSize: '17px' }}>Tax Identification Number (TIN) or equivalent</label>
                                     <input class="input-bordered" type="text" id="tax-identification-number-business" name="tax-identification-number-business" placeholder="Your TIN or equivalent" />
                                 </div>
-                            </div>
+                            </div> */}
 
                             {/* <div class="col-md-6">
                                 <div class="input-item input-with-label">
@@ -242,13 +265,12 @@ const handleDocument2Upload = (event) => {
                                 </div>
                             </div> */}
 
-                            <div class="col-md-6">
+                            {/* <div class="col-md-6">
                                 <div class="input-item input-with-label">
                                     <label for="source-of-funds-business" class="input-item-label" style={{ fontSize: '17px' }}>Source of Funds or Business Capital</label>
                                     <input class="input-bordered" type="text" id="source-of-funds-business" name="source-of-funds-business" placeholder="Your source of funds or business capital" />
                                 </div>
                             </div>
-
 
                             <div class="col-md-6">
                                 <div class="input-item input-with-label">
@@ -280,9 +302,7 @@ const handleDocument2Upload = (event) => {
                                     <label for="trade-references" class="input-item-label" style={{ fontSize: '17px' }}>Trade References or Business References</label>
                                     <textarea class="input-bordered" id="trade-references" name="trade-references" placeholder="Provide trade references or business references"></textarea>
                                 </div>
-                            </div>
-
-                           
+                            </div> */}
                                 </div>
                             </div>
                         </div>
@@ -320,35 +340,72 @@ const handleDocument2Upload = (event) => {
                                    
                                 <div class="row"> 
                        
-                            <div class="col-md-6">
+                            {/* <div class="col-md-6">
                                 <div class="input-item input-with-label">
                                     <label class="input-item-label">Passport (photo page)</label>
                                     <input class="input-bordered" type="file" placeholder="Upload Passport" />
                                 </div>
-                            </div>
+                            </div> */}
 
                             <div class="col-md-6">
                                 <div class="input-item input-with-label">
-                                    <label class="input-item-label">National ID card (both sides) OR Driver's license (both sides)</label>
+                                    <label class="input-item-label">National ID card OR PASSPORT (both sides)</label>
                                     <input
-                        class="input-bordered"
-                        type="file"
-                        accept=".pdf, .jpg, .jpeg, .png"
-                        onChange={handleDocument1Upload}
-                        multiple
-                    />
-                    <div>
-                    {uploadedDocument1.map((document, index) => (
-        <div key={index}>
-            <p>Document {index + 1}:</p>
-            <p>Filename: {document.name}</p>
-            <p>Size: {document.size} bytes</p>
-                </div>
-            ))}
-        </div>
-
+                                    class="input-bordered"
+                                    type="file"
+                                    accept=".pdf, .jpg, .jpeg, .png"
+                                    onChange={handleDocument1Upload}
+                                    multiple
+                                />
+                                    <div>
+                                    {uploadedDocument1.map((document, index) => (
+                        <div key={index}>
+                            <p>Document {index + 1}:</p>
+                            <p>Filename: {document.name}</p>
+                            <p>Size: {document.size} bytes</p>
                                 </div>
+                            ))}
+                        </div>
+                      </div>
+                    </div>
+
+                                        <div className="col-md-6">
+                        <div className="input-item input-with-label">
+                            <label className="input-item-label">Selfie</label>
+                            {showCamera ? (
+                            <div>
+                                <Webcam
+                                audio={false}
+                                ref={webcamRef}
+                                screenshotFormat="image/jpeg"
+                                />
+                                {capturedImage ? (
+                                <div>
+                                    <img src={capturedImage} alt="Captured Selfie" />
+                                    <button onClick={() => setCapturedImage(null)}>Retake Selfie</button>
+                                </div>
+                                ) : (
+                                <div className="input-bordered">
+                                    <button onClick={handleCaptureClick}>Capture Selfie</button>
+                                </div>
+                                )}
                             </div>
+                            ) : (
+                            <div>
+                                {capturedImage ? (
+                                <div>
+                                    <img src={capturedImage} alt="Captured Selfie" />
+                                    <button onClick={() => setCapturedImage(null)}>Retake Selfie</button>
+                                </div>
+                                ) : (
+                                <div className="input-bordered">
+                                    <button onClick={capture}>Take Selfie</button>
+                                </div>
+                                )}
+                            </div>
+                            )}
+                        </div>
+                        </div>
 
                             <div class="col-md-6">
                                         <div class="input-item input-with-label">
@@ -357,7 +414,7 @@ const handleDocument2Upload = (event) => {
                                      </div>
                                  </div>
 
-                            <div class="col-md-6">
+                            {/* <div class="col-md-6">
                                 <div class="input-item input-with-label">
                                     <label class="input-item-label">Utility bill or bank statement showing the address</label>
                                     <input class="input-bordered" type="file" placeholder="Upload Utility Bill or Bank Statement" />
@@ -371,14 +428,12 @@ const handleDocument2Upload = (event) => {
                                 </div>
                             </div>
 
-
                             <div class="col-md-6">
                                 <div class="input-item input-with-label">
                                     <label class="input-item-label">Business License</label>
                                     <input class="input-bordered" type="file" placeholder="Upload Business License" />
                                 </div>
                             </div>
-
 
                             <div class="col-md-6">
                                 <div class="input-item input-with-label">
@@ -387,14 +442,12 @@ const handleDocument2Upload = (event) => {
                                 </div>
                             </div>
 
-
                             <div class="col-md-6">
                                 <div class="input-item input-with-label">
                                     <label class="input-item-label">List of Board of Directors or equivalent document</label>
                                     <input class="input-bordered" type="file" placeholder="Upload Board of Directors Document" />
                                 </div>
                             </div>
-
 
                             <div class="col-md-6">
                                 <div class="input-item input-with-label">
@@ -403,14 +456,12 @@ const handleDocument2Upload = (event) => {
                                 </div>
                             </div>
 
-
                             <div class="col-md-6">
                                 <div class="input-item input-with-label">
                                     <label class="input-item-label">Tax Identification Number (TIN) certificate or equivalent</label>
                                     <input class="input-bordered" type="file" placeholder="Upload TIN Certificate" />
                                 </div>
                             </div>
-
 
                             <div class="col-md-6">
                                 <div class="input-item input-with-label">
@@ -423,7 +474,6 @@ const handleDocument2Upload = (event) => {
                                 </div>
                             </div>
 
-
                             <div class="col-md-6">
                                 <div class="input-item input-with-label">
                                     <label class="input-item-label">Beneficial Ownership Document (if applicable)</label>
@@ -435,14 +485,12 @@ const handleDocument2Upload = (event) => {
                                 </div>
                             </div>
 
-
                             <div class="col-md-6">
                                 <div class="input-item input-with-label">
                                     <label class="input-item-label">Trade Licenses (for specific industries or activities)</label>
                                     <input class="input-bordered" type="file" placeholder="Upload Trade Licenses" />
                                 </div>
                             </div>
-
 
                             <div class="col-md-6">
                                 <div class="input-item input-with-label">
@@ -466,13 +514,12 @@ const handleDocument2Upload = (event) => {
                                 </div>
                             </div>
 
-
                             <div class="col-md-6">
                                 <div class="input-item input-with-label">
                                     <label class="input-item-label">Photograph of business premises or storefront (in some cases)</label>
                                     <input class="input-bordered" type="file" placeholder="Upload Photograph of Business Premises" />
                                 </div>
-                            </div>
+                            </div> */}
 
                            
                                 </div>
