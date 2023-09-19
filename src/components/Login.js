@@ -1,12 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Routes, useNavigate, Route, Link } from 'react-router-dom';
+import axios from 'axios';
 
 
-function Login() {
-    const navigate= useNavigate();
-  const handleLogin = () =>{
-    navigate('/#/profile') 
-  }
+
+// function Login() {
+//     const navigate= useNavigate();
+//   const handleLogin = () =>{
+//     navigate('/#/profile') 
+//   }
+const Login = () => {
+    const [loginEmail, setLoginEmail] = useState('')
+    const [loginPassword, setLoginPassword] = useState('')
+
+    const loginUser = ()=>{
+        axios.post('http://localhost:3001/auth/login', {  
+            loginEmail: loginEmail,
+            loginPassword: loginPassword,
+        }).then(()=>{
+            console.log('User has been created')
+        })
+        .catch((error) => {
+            console.error('Error creating user:', error);
+          });
+
+    }
+
+
   return (
     <div>
     <div class="page-ath-wrap" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
@@ -18,10 +38,14 @@ function Login() {
                 <h2 class="page-ath-heading style=">Sign in <small>with your MUDA Account</small></h2>
                 <form action="/#/profile">
                     <div class="input-item">
-                        <input type="text" placeholder="Your Email" class="input-bordered" />
+                        <input type="text" placeholder="Your Email" class="input-bordered" onChange={(event)=>{
+                            setLoginEmail(event.target.value)
+                        }}/>
                     </div>
                     <div class="input-item">
-                        <input type="password" placeholder="Password" class="input-bordered" />
+                        <input type="password" placeholder="Password" class="input-bordered" onChange={(event)=>{
+                            setLoginPassword(event.target.value)
+                        }}/>
                     </div>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="input-item text-left">
@@ -33,7 +57,7 @@ function Login() {
                             <div class="gaps-2x"></div>
                         </div>
                     </div>
-                    <button class="btn btn-primary btn-block" onClick={handleLogin}>Sign In</button>
+                    <button class="btn btn-primary btn-block" onClick={loginUser}>Sign In</button>
                 </form>
                 {/* <div class="sap-text"><span>Or Sign In With</span></div> */}
                     <div>
@@ -59,5 +83,6 @@ function Login() {
     </div>
   )
 }
+
 
 export default Login

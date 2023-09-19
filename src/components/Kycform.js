@@ -46,12 +46,26 @@ import Select from 'react-select';
                                 <div class="row"> 
                                              <div class="col-md-6">
                                                 <div class="input-item input-with-label">
-                                                    <label for="business-name" class="input-item-label" style={{ fontSize: '17px' }}>Business Name</label>
-                                                    <input class="input-bordered" type="text" id="business-name" name="business-name" placeholder="Your Business Name" />
+                                                    <label for="business-name" class="input-item-label" style={{ fontSize: '17px' }}>Business lisence</label>
+                                                    <input class="input-bordered" type="text" id="business-lisence" name="business-lisence" placeholder="Your Business Lisence" />
                                                 </div>
                                             </div>
 
                                             <div class="col-md-6">
+                                                <div class="input-item input-with-label">
+                                                    <label class="input-item-label">Trade Licenses (for specific industries or activities)</label>
+                                                    <input class="input-bordered" type="file" placeholder="Upload Trade Licenses" />
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="input-item input-with-label">
+                                                    <label for="business-registration-number" class="input-item-label" style={{ fontSize: '17px' }}>Company registration certificate</label>
+                                                    <input class="input-bordered" type="text" id="company-registration-certificate" name="company-registration-certicate" placeholder="Your Company registration certificate" />
+                                                </div>
+                                            </div>
+
+                                            {/* <div class="col-md-6">
                                                 <div class="input-item input-with-label">
                                                     <label for="business-registration-number" class="input-item-label" style={{ fontSize: '17px' }}>Business Registration Number</label>
                                                     <input class="input-bordered" type="text" id="business-registration-number" name="business-registration-number" placeholder="Your Business Registration Number" />
@@ -68,9 +82,9 @@ import Select from 'react-select';
                                     <label for="registered-business-address" class="input-item-label" style={{ fontSize: '17px' }}>Registered Business Address</label>
                                     <input class="input-bordered" type="text" id="registered-business-address" name="registered-business-address" placeholder="Your Registered Business Address" />
                                 </div>
-                            </div>
+                                          </div> */}
 
-                              <div class="col-md-6">
+                              {/* <div class="col-md-6">
                                 <div class="input-item input-with-label">
                                   <label for="phone-number" class="input-item-label">Phone Number</label>
                                      <PhoneInput
@@ -102,7 +116,6 @@ import Select from 'react-select';
                                 </div>
                             </div>
 
-
                             <div class="col-md-6">
                                 <div class="input-item input-with-label">
                                     <label for="nature-of-business-activities" class="input-item-label" style={{ fontSize: '17px' }}>Nature of Business Activities</label>
@@ -133,7 +146,9 @@ import Select from 'react-select';
                                     <label for="trade-references" class="input-item-label" style={{ fontSize: '17px' }}>Trade References or Business References</label>
                                     <textarea class="input-bordered" id="trade-references" name="trade-references" placeholder="Provide trade references or business references"></textarea>
                                 </div>
-                            </div>                         
+                            </div>    
+                             */}
+
                                 </div>
                             </div>
                         </div>

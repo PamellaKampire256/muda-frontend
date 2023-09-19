@@ -21,7 +21,7 @@ function Navbar() {
                             </a>
                         </li>
                     </ul>
-                    <a class="topbar-logo" href="/#/kycform" onclick="return false;">
+                    <a class="topbar-logo" href="/#/kycform" style={{ pointerEvents: 'none' }}>
                        <img src="assets/images/logo-white.png" srcset="images/logo-white2.png 2x" alt="logo" />
                     </a>
                     <ul class="topbar-nav">
@@ -80,4 +80,92 @@ function Navbar() {
 }
 
 export default Navbar
+
+
+// import React, { useState } from 'react';
+// import { Link } from 'react-router-dom';
+
+// function Navbar() {
+//     const [isMenuVisible, setMenuVisible] = useState(false);
+
+//     const toggleMenu = () => {
+//       setMenuVisible(!isMenuVisible);
+//     };
+  
+//     const closeMenu = () => {
+//       setMenuVisible(false);
+//     };
+  
+
+//   return (
+//     <div>
+//       <div className="topbar-wrap">
+//         <div className="topbar is-sticky">
+//           <div className="container">
+//             <div className="d-flex justify-content-between align-items-center">
+//               <ul className="topbar-nav d-lg-none">
+//                 <li className="topbar-nav-item relative">
+//                   <a className="toggle-nav" href="#" onClick={toggleMenu}>
+//                     <div className="toggle-icon">
+//                       <span className="toggle-line"></span>
+//                       <span className="toggle-line"></span>
+//                       <span className="toggle-line"></span>
+//                       <span className="toggle-line"></span>
+//                     </div>
+//                   </a>
+//                 </li>
+//               </ul>
+//               <a className="topbar-logo" href="/kycform" onClick={(e) => e.preventDefault()}>
+//                 <img src="assets/images/logo-white.png" srcSet="images/logo-white2.png 2x" alt="logo" />
+//               </a>
+//               <ul className="topbar-nav">
+//                 <li className="topbar-nav-item relative">
+//                   <span className="user-welcome d-none d-lg-inline-block">Welcome! Kampire Pamella</span>
+//                   <a className="toggle-tigger user-thumb" href="#" style={{ pointerEvents: 'none' }}>
+//                     <em className="ti ti-user"></em>
+//                   </a>
+//                   <div className={`toggle-class dropdown-content dropdown-content-right dropdown-arrow-right user-dropdown ${isMenuVisible ? 'active' : ''}`}>
+//                     <ul className="user-links">
+//                       <li><Link to="/profile" onClick={() => setMenuVisible(false)}><i className="ti ti-id-badge"></i>My Profile</Link></li>
+//                     </ul>
+//                     <ul className="user-links bg-light">
+//                       <li><Link to="/" onClick={() => setMenuVisible(false)}><i className="ti ti-power-off"></i>Logout</Link></li>
+//                     </ul>
+//                   </div>
+//                 </li>
+//               </ul>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+
+//       <div className={`navbar ${isMenuVisible ? 'active' : ''}`}>
+//         <div className="container">
+//           <div className="navbar-innr">
+//             <ul className="navbar-menu">
+//               <li><Link to="/profile"><em className="ikon ikon-user"></em> Personal Information</Link></li>
+//               <li className="has-dropdown page-links-all">
+//                 <a className="drop-toggle" href="#" onClick={(e) => { e.preventDefault(); toggleMenu(); }}><em className="ikon ikon-exchange"></em>Company Information</a>
+//                 <ul className={`navbar-dropdown ${isMenuVisible ? 'active' : ''}`}>
+//                 <li className="has-dropdown"><Link className="drop-toggle" to="/kyclist">KYC Lists - Admin</Link></li>
+//                   <li className="has-dropdown"><Link className="drop-toggle" to="/kycdetails">KYC Details - Admin</Link></li>
+//                   <li className="has-dropdown"><Link className="drop-toggle" to="/userlist">User List - Admin</Link></li>
+//                   <li className="has-dropdown"><Link className="drop-toggle" to="/userdetails">User Details - Admin</Link></li>
+//                   <li className="has-dropdown"><Link className="drop-toggle" to="/">Logout</Link></li>
+//                 </ul>
+//               </li>
+//             </ul>
+//             <ul className="navbar-btns">
+//               <li><Link to="/kycapplication" className="btn btn-sm btn-outline btn-light"><em className="text-primary ti ti-files"></em><span>KYC Application</span></Link></li>
+//               <li className="d-none"><span className="badge badge-outline badge-success badge-lg"><em className="text-success ti ti-files mgr-1x"></em><span className="text-success">KYC Approved</span></span></li>
+//             </ul>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default Navbar;
+
 
