@@ -166,18 +166,15 @@ const webcamRef = useRef(null);
                                         </div>
                                     </form>
                                 </div>
-                                <div class="tab-pane fade" id="company-details">
-                                
-                            
-    <div class="page-content">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-16 col-xl-16">
-                    <div class="kyc-form-steps card mx-lg-4">
-                        <div class="form-step form-step1">
-                            <div class="form-step-fields card-innr">
-                                
-                                <div class="row"> 
+            <div class="tab-pane fade" id="company-details">
+                <div class="page-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-16 col-xl-16">
+                                <div class="kyc-form-steps card mx-lg-4">
+                                    <div class="form-step form-step1">
+                                        <div class="form-step-fields card-innr">
+                                              <div class="row"> 
                                              <div class="col-md-6">
                                                 <div class="input-item input-with-label">
                                                     <label for="business-name" class="input-item-label" style={{ fontSize: '17px' }}>Business License</label>
@@ -327,9 +324,8 @@ const webcamRef = useRef(null);
                                     </div>
                                 
                                 </div>
-                                <div class="tab-pane fade" id="upload-documents">
 
-                           
+     <div class="tab-pane fade" id="upload-documents">
         <div class="page-content">
             <div class="container">
                 <div class="row justify-content-center">

@@ -1,88 +1,109 @@
-import React, { useState } from 'react'
-import { Routes, useNavigate, Route, Link } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 
+function Login() {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [rememberMe, setRememberMe] = useState(false);
 
+  useEffect(() => {
+    // Check if there are saved credentials in local storage
+    const savedEmail = localStorage.getItem('rememberedEmail');
+    const savedPassword = localStorage.getItem('rememberedPassword');
 
-// function Login() {
-//     const navigate= useNavigate();
-//   const handleLogin = () =>{
-//     navigate('/#/profile') 
-//   }
-const Login = () => {
-    const [loginEmail, setLoginEmail] = useState('')
-    const [loginPassword, setLoginPassword] = useState('')
+    if (savedEmail && savedPassword) {
+      setEmail(savedEmail);
+      setPassword(savedPassword);
+      setRememberMe(true);
+    }
+  }, []);
 
-    const loginUser = ()=>{
-        axios.post('http://localhost:3001/auth/login', {  
-            loginEmail: loginEmail,
-            loginPassword: loginPassword,
-        }).then(()=>{
-            console.log('User has been created')
-        })
-        .catch((error) => {
-            console.error('Error creating user:', error);
-          });
+  const handleRememberMeChange = () => {
+    setRememberMe(!rememberMe);
+  };
 
+  const handleLogin = async (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+
+    const userCredentials = {
+      email: form.elements.email.value,
+      password: form.elements.password.value,
+    };
+
+    if (rememberMe) {
+      // Save the email and password in local storage
+      localStorage.setItem('rememberedEmail', userCredentials.email);
+      localStorage.setItem('rememberedPassword', userCredentials.password);
+    } else {
+      // Clear the saved email and password from local storage
+      localStorage.removeItem('rememberedEmail');
+      localStorage.removeItem('rememberedPassword');
     }
 
+    try {
+      const response = await fetch('http://localhost:3002/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userCredentials),
+      });
+
+      if (response.ok) {
+        console.log('User has been logged in');
+        navigate('/profile');
+      } else {
+        const errorData = await response.json();
+        console.error('Error logging in:', errorData.error);
+      }
+    } catch (error) {
+      console.error('Error logging in:', error);
+    }
+  };
 
   return (
     <div>
-    <div class="page-ath-wrap" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
-        <div class="page-ath-content">
-            <div class="page-ath-header">
-                <a href="/#/" class="page-ath-logo"><img src="assets/images/avatar8.png" srcset="assets/images/avatar9.png 2x" alt="logo" style={{ width: '250px', height: 'auto' }}  /></a>
+      <div className="page-ath-wrap" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
+        <div className="page-ath-content">
+          <div className="page-ath-header">
+            <a href="/#/" className="page-ath-logo">
+              <img src="assets/images/avatar8.png" srcSet="assets/images/avatar9.png 2x" alt="logo" style={{ width: '250px', height: 'auto' }} />
+            </a>
+          </div>
+          <div className="page-ath-form">
+            <h2 className="page-ath-heading">Sign in <small>with your MUDA Account</small></h2>
+            <form onSubmit={handleLogin}>
+              <div className="input-item">
+                <input type="text" name="email" placeholder="Your Email" className="input-bordered" value={email} onChange={(e) => setEmail(e.target.value)} />
+              </div>
+              <div className="input-item">
+                <input type="password" name="password" placeholder="Password" className="input-bordered" value={password} onChange={(e) => setPassword(e.target.value)} />
+              </div>
+              <div className="input-item text-left">
+                <input className="input-checkbox input-checkbox-md" id="remember-me" type="checkbox" checked={rememberMe} onChange={handleRememberMeChange} />
+                <label htmlFor="remember-me">Remember Me</label>
+              </div>
+              <button type="submit" className="btn btn-primary btn-block">Sign In</button>
+            </form>
+            <ul className="row guttar-20px guttar-vr-20px">
+            </ul>
+            <div className="gaps-2x"></div>
+            <div className="gaps-2x"></div>
+            <div className="form-note">
+              Don’t have an account? <Link to="/register"> <strong>Sign up here</strong></Link>
             </div>
-            <div class="page-ath-form">
-                <h2 class="page-ath-heading style=">Sign in <small>with your MUDA Account</small></h2>
-                <form action="/#/profile">
-                    <div class="input-item">
-                        <input type="text" placeholder="Your Email" class="input-bordered" onChange={(event)=>{
-                            setLoginEmail(event.target.value)
-                        }}/>
-                    </div>
-                    <div class="input-item">
-                        <input type="password" placeholder="Password" class="input-bordered" onChange={(event)=>{
-                            setLoginPassword(event.target.value)
-                        }}/>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="input-item text-left">
-                            <input class="input-checkbox input-checkbox-md" id="remember-me" type="checkbox" />
-                            <label for="remember-me">Remember Me</label>
-                        </div>
-                        <div>
-                            <a href="/#/forgotpassword">Forgot password?</a>
-                            <div class="gaps-2x"></div>
-                        </div>
-                    </div>
-                    <button class="btn btn-primary btn-block" onClick={loginUser}>Sign In</button>
-                </form>
-                {/* <div class="sap-text"><span>Or Sign In With</span></div> */}
-                    <div>
-                        
-                    </div>
-                <ul class="row guttar-20px guttar-vr-20px">
-                   
-                </ul>
-                <div class="gaps-2x"></div>
-                <div class="gaps-2x"></div>
-                <div class="form-note">
-                    Don’t have an account? <Link to="/register"> <strong>Sign up here</strong></Link>
-                </div>
-            </div>
-            <div class="page-ath-footer">
-                <ul class="footer-links">
-                   
-                </ul>
-            </div>
+          </div>
+          <div className="page-ath-footer">
+            <ul className="footer-links">
+            </ul>
+          </div>
         </div>
-       
+      </div>
     </div>
-    </div>
-  )
+  );
 }
 
-
-export default Login
+export default Login;
