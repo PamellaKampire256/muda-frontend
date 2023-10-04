@@ -5,9 +5,9 @@ function Register() {
   const navigate = useNavigate();
 
   const handleRegister = async (event) => {
-    event.preventDefault(); // Prevent the default form submission behavior
+    event.preventDefault(); 
 
-    const form = event.target; // Get the form element
+    const form = event.target;
 
     const newUser = {
       full_name: form.elements.name.value,
@@ -27,16 +27,13 @@ function Register() {
 
       if (response.ok) {
         console.log('User has been created');
-        // You can redirect to a success page or perform other actions here.
         navigate('/signupsuccess');
       } else {
-        const errorData = await response.json(); // Parse the error response as JSON
+        const errorData = await response.json(); 
         console.error('Error creating user:', errorData.error);
-        // Handle the error and possibly display an error message to the user.
       }
     } catch (error) {
       console.error('Error creating user:', error);
-      // Handle the error and possibly display an error message to the user.
     }
   };
 

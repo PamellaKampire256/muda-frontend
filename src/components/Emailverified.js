@@ -22,13 +22,6 @@ function Emailverified() {
                 </ul>
             </div>
         </div>
-        {/* <div class="page-ath-gfx">
-           <div class="w-100 d-flex justify-content-center">
-               <div class="col-md-8 col-xl-5">
-                   <img src="assets/images/ath-gfx.png" alt="image" />
-               </div>
-           </div>            
-        </div> */}
     </div>
     </div>
   )

@@ -18,16 +18,6 @@ function Userdetails() {
                             <div class="flex-col d-sm-none">
                                 <a href="/#/userlist" class="btn btn-icon btn-sm btn-primary"><em class="fas fa-arrow-left"></em></a>
                             </div>
-                            {/* <div class="relative d-inline-block">
-                                <a href="#" class="btn btn-dark btn-sm btn-icon toggle-tigger"><em class="ti ti-more-alt"></em></a>
-                                <div class="toggle-class dropdown-content dropdown-content-top-left">
-                                    <ul class="dropdown-list">
-                                        <li><a href="#"><em class="far fa-envelope"></em> Send Mail</a></li>
-                                        <li><a href="#"><em class="fas fa-shield-alt"></em> Reset Pass</a></li>
-                                        <li><a href="#"><em class="fas fa-ban"></em> Suspend</a></li>
-                                    </ul>
-                                </div>
-                            </div> */}
                         </div>
                     </div>
                     <div class="gaps-1-5x"></div>
