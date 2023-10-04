@@ -17,6 +17,9 @@ import Policy from './components/Policy';
 import Userdetails from './components/Userdetails';
 import Userlist from './components/Userlist';
 import Individualsform from './components/Individualsform';
+import Companyinformation from './components/Companyinformation';
+import Submitting from './components/Submitting';
+import Uploaddocuments from './components/Uploaddocuments';
 import { Routes, Route } from 'react-router-dom';
 
 
@@ -42,6 +45,9 @@ function App() {
     <Route path='/userdetails' element={<Userdetails />} />
     <Route path='/userlist' element={<Userlist />} />
     <Route path='/individualsform' element={<Individualsform />} />
+    <Route path='/companyinformation' element={<Companyinformation />} />
+    <Route path='/submitting' element={<Submitting />} />
+    <Route path='/uploaddocuments' element={<Uploaddocuments />} />
   </Routes>
   );
 }

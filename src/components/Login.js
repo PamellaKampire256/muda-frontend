@@ -8,7 +8,6 @@ function Login() {
   const [rememberMe, setRememberMe] = useState(false);
 
   useEffect(() => {
-    // Check if there are saved credentials in local storage
     const savedEmail = localStorage.getItem('rememberedEmail');
     const savedPassword = localStorage.getItem('rememberedPassword');
 
@@ -34,11 +33,9 @@ function Login() {
     };
 
     if (rememberMe) {
-      // Save the email and password in local storage
       localStorage.setItem('rememberedEmail', userCredentials.email);
       localStorage.setItem('rememberedPassword', userCredentials.password);
     } else {
-      // Clear the saved email and password from local storage
       localStorage.removeItem('rememberedEmail');
       localStorage.removeItem('rememberedPassword');
     }

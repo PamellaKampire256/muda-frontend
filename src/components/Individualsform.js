@@ -25,7 +25,6 @@ import { useDropzone } from 'react-dropzone';
         }));
 
         const onDrop = (acceptedFiles) => {
-            // Handle dropped files here
         };
     
         const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
