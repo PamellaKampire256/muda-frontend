@@ -17,7 +17,7 @@ function Register() {
     };
 
     try {
-      const response = await fetch('http://localhost:3002/auth/register', {
+      const response = await fetch('http://16.16.27.213:3002/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
