@@ -1,72 +1,59 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState } from 'react';
 import 'react-phone-number-input/style.css';
-import Webcam from 'react-webcam'; // Import the Webcam component
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-function Uploaddocuments() {
-  const webcamRef = useRef(null);
-  const [showCamera, setShowCamera] = useState(false);
-  const [capturedImage, setCapturedImage] = useState(null);
-  const [document1, setDocument1] = useState(null); // State for document 1
-  const [proofOfAddress, setProofOfAddress] = useState(null); // State for proof of address
-  const [tradeLicenses, setTradeLicenses] = useState(null); // State for trade licenses
+function UploadDocuments() {
   const [isLoading, setIsLoading] = useState(false);
 
-  const capture = useCallback(() => {
-    setShowCamera(true);
-  }, []);
+  const [formData, setFormData] = useState({
+    national_id_card_or_passport: null,
+    selfie: null,
+    proof_of_address: null,
+    trade_licences: null,
+  });
 
-  const handleCaptureClick = useCallback(() => {
-    const imageSrc = webcamRef.current.getScreenshot();
-    setCapturedImage(imageSrc);
-    setShowCamera(false);
-  }, []);
-
-  const handleDocument1Upload = (e) => {
-    // Handle document 1 file selection
-    const file = e.target.files[0];
-    setDocument1(file);
+  const handleFileChange = (e) => {
+    const { name, files } = e.target;
+    setFormData({
+      ...formData,
+      [name]: files[0],
+    });
   };
 
-  const handleProofOfAddressUpload = (e) => {
-    // Handle proof of address file selection
-    const file = e.target.files[0];
-    setProofOfAddress(file);
-  };
+  const handleUpload = async () => {
+    const apiUrl = 'http://localhost:3002/profile/create-personalkyc';
 
-  const handleTradeLicensesUpload = (e) => {
-    // Handle trade licenses file selection
-    const file = e.target.files[0];
-    setTradeLicenses(file);
-  };
-
-  const handleUploaddocuments = async () => {
-    setIsLoading(true);
-
-    const formData = new FormData();
-    formData.append('national_id_card_or_passport', document1);
-    formData.append('proof_of_address', proofOfAddress);
-    formData.append('trade_licenses', tradeLicenses);
-    console.log('FormData sent to API:', formData);
+    const data = new FormData();
+    data.append('national_id_card_or_passport', formData.national_id_card_or_passport);
+    data.append('selfie', formData.selfie);
+    data.append('proof_of_address', formData.proof_of_address);
+    data.append('trade_licences', formData.trade_licences);
 
     try {
-      const response = await fetch('http://localhost:3002/upload/upload-files', {
+      const response = await fetch(apiUrl, {
         method: 'POST',
-        body: formData,
+        body: data,
       });
 
-      if (response.status === 200) {
-        toast.success('Documents uploaded successfully');
+      if (response.ok) {
+        alert('Files uploaded successfully!');
+        setFormData({
+          ...formData,
+          national_id_card_or_passport: null,
+          selfie: null,
+          proof_of_address: null,
+          trade_licences: null,
+        });
       } else {
-        toast.success('Documents uploaded successfully');
+        alert('Failed to upload files.');
       }
     } catch (error) {
-      toast.success('Documents uploaded successfully');
-    } finally {
-      setIsLoading(false);
+      console.error('Error:', error);
+      alert('An error occurred while uploading files.');
     }
   };
+
   return (
     <div>
       <form action="#">
@@ -75,100 +62,38 @@ function Uploaddocuments() {
             <div className="input-item input-with-label">
               <label className="input-item-label">National ID card OR PASSPORT (both sides)</label>
               <input
-                className="input-bordered"
                 type="file"
-                accept=".pdf, .jpg, .jpeg, .png"
-                onChange={handleDocument1Upload}
+                id="national_id_card_or_passport"
+                name="national_id_card_or_passport"
+                onChange={handleFileChange}
               />
-              {document1 && (
-                <div>
-                  <p>Filename: {document1.name}</p>
-                  <p>Size: {document1.size} bytes</p>
-                </div>
-              )}
             </div>
           </div>
-  
           <div className="col-md-6">
             <div className="input-item input-with-label">
               <label className="input-item-label">Selfie</label>
-              {showCamera ? (
-                <div>
-                  <Webcam
-                    audio={false}
-                    ref={webcamRef}
-                    screenshotFormat="image/jpeg"
-                  />
-                  {capturedImage ? (
-                    <div>
-                      <img src={capturedImage} alt="Captured Selfie" />
-                      <button onClick={() => setCapturedImage(null)}>Retake Selfie</button>
-                    </div>
-                  ) : (
-                    <div className="input-bordered">
-                      <button onClick={handleCaptureClick}>Capture Selfie</button>
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <div>
-                  {capturedImage ? (
-                    <div>
-                      <img src={capturedImage} alt="Captured Selfie" />
-                      <button onClick={() => setCapturedImage(null)}>Retake Selfie</button>
-                    </div>
-                  ) : (
-                    <div className="input-bordered">
-                      <button onClick={capture}>Take Selfie</button>
-                    </div>
-                  )}
-                </div>
-              )}
+              <input type="file" id="selfie" name="selfie" onChange={handleFileChange} />
             </div>
           </div>
-  
+
           <div className="col-md-6">
             <div className="input-item input-with-label">
               <label htmlFor="proof-of-address" className="input-item-label" style={{ fontSize: '13px' }}>Proof of Address (e.g. utility bill, bank statement for the business)</label>
-              <input
-                className="input-bordered"
-                type="file"
-                id="proof-of-address"
-                name="proof-of-address"
-                placeholder="(e.g. utility bill, bank statement)"
-                onChange={handleProofOfAddressUpload}
-              />
-              {proofOfAddress && (
-                <div>
-                  <p>Filename: {proofOfAddress.name}</p>
-                  <p>Size: {proofOfAddress.size} bytes</p>
-                </div>
-              )}
+              <input type="file" id="proof_of_address" name="proof_of_address" onChange={handleFileChange} />
             </div>
           </div>
-  
+
           <div className="col-md-6">
             <div className="input-item input-with-label">
               <label className="input-item-label">Trade Licenses (for specific industries or activities)</label>
-              <input
-                className="input-bordered"
-                type="file"
-                placeholder="Upload Trade Licenses"
-                onChange={handleTradeLicensesUpload}
-              />
-              {tradeLicenses && (
-                <div>
-                  <p>Filename: {tradeLicenses.name}</p>
-                  <p>Size: {tradeLicenses.size} bytes</p>
-                </div>
-              )}
+              <input type="file" id="trade_licences" name="trade_licences" onChange={handleFileChange} />
             </div>
           </div>
         </div>
-  
+
         <div className="gaps-1x"></div>
         <div className="d-sm-flex justify-content-between align-items-center">
-          <button className="btn btn-primary" onClick={handleUploaddocuments} disabled={isLoading}>
+          <button className="btn btn-primary" onClick={handleUpload} disabled={isLoading}>
             {isLoading ? (
               <div className="spinner-border text-light" role="status">
                 <span className="sr-only">Loading...</span>
@@ -184,7 +109,94 @@ function Uploaddocuments() {
       <ToastContainer />
     </div>
   );
-  
 }
 
-export default Uploaddocuments;
+export default UploadDocuments;
+
+
+
+
+
+// vooggiigigigiiiiiiigg
+// import React, { useState } from 'react';
+
+// const FileUpload = () => {
+//   const [formData, setFormData] = useState({
+//     national_id_card_or_passport: null,
+//     selfie: null,
+//     proof_of_address: null,
+//     trade_licences: null,
+//   });
+
+//   const handleFileChange = (e) => {
+//     const { name, files } = e.target;
+//     setFormData({
+//       ...formData,
+//       [name]: files[0],
+//     });
+//   };
+
+//   const handleUpload = async () => {
+//     const apiUrl = 'http://localhost:3002/upload/upload-files';
+
+//     const data = new FormData();
+//     data.append('national_id_card_or_passport', formData.national_id_card_or_passport);
+//     data.append('selfie', formData.selfie);
+//     data.append('proof_of_address', formData.proof_of_address);
+//     data.append('trade_licences', formData.trade_licences);
+
+//     try {
+//       const response = await fetch(apiUrl, {
+//         method: 'POST',
+//         body: data,
+//       });
+
+//       if (response.ok) {
+//         alert('Files uploaded successfully!');
+//         // Clear the form
+//         setFormData({
+//           national_id_card_or_passport: null,
+//           selfie: null,
+//           proof_of_address: null,
+//           trade_licences: null,
+//         });
+//       } else {
+//         alert('Failed to upload files.');
+//       }
+//     } catch (error) {
+//       console.error('Error:', error);
+//       alert('An error occurred while uploading files.');
+//     }
+//   };
+
+//   return (
+//     <div>
+//       <h2>Upload Documents</h2>
+//       <div>
+//         <label htmlFor="national_id_card_or_passport">National ID Card or Passport:</label>
+//         <input
+//           type="file"
+//           id="national_id_card_or_passport"
+//           name="national_id_card_or_passport"
+//           onChange={handleFileChange}
+//         />
+//       </div>
+//       <div>
+//         <label htmlFor="proof_of_address">selfie:</label>
+//         <input type="file" id="selfie" name="selfie" onChange={handleFileChange} />
+//       </div>
+//       <div>
+//         <label htmlFor="proof_of_address">Proof of Address:</label>
+//         <input type="file" id="proof_of_address" name="proof_of_address" onChange={handleFileChange} />
+//       </div>
+//       <div>
+//         <label htmlFor="trade_licences">Trade Licences:</label>
+//         <input type="file" id="trade_licences" name="trade_licences" onChange={handleFileChange} />
+//       </div>
+//       <button onClick={handleUpload}>Upload</button>
+//     </div>
+//   );
+// };
+
+// export default FileUpload;
+
