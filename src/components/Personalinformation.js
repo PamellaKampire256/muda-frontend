@@ -36,7 +36,7 @@ function Personalinformation() {
     };
 
     try {
-      const response = await fetch('http://16.16.27.213:3002/profile/create-personalkyc', {
+      const response = await fetch('http://localhost:3002/profile/create-personalkyc', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -44,8 +44,12 @@ function Personalinformation() {
         body: JSON.stringify(formData),
       });
 
-      if (response.status === 200) {
-        toast.success('Personal information submitted successfully');
+      if (response.status === 200) {     
+        const data = await response.json(); // Parse the response JSON
+       const user_id = data.user_id; //the response contains an 'user_id' field
+      // Set user_id in localStorage
+      localStorage.setItem('user_id', user_id);
+      toast.success("personal information succesfully registered");
       } else {
         toast.error('Error submitting personal information');
       }
@@ -137,13 +141,7 @@ function Personalinformation() {
             <div class="gaps-1x"></div>
             <div class="d-sm-flex justify-content-between align-items-center">
             <button className="btn btn-primary" disabled={isLoading}>
-              {isLoading ? (
-                <div className="spinner-border text-light" role="status">
-                  <span className="sr-only">Loading...</span>
-                </div>
-              ) : (
-                'Update Profile'
-              )}
+              Update Profile
             </button>
                 <div class="gaps-2x d-sm-none"></div>
                 <span class="text-success"><em class="ti ti-check-box"></em> All Changes are saved</span>

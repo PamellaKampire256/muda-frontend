@@ -1,8 +1,6 @@
-import React, { useState, useRef, useCallback } from 'react'
+import React from 'react'
 import 'react-datepicker/dist/react-datepicker.css';
-import { useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
-import { countries } from 'countries-list'; 
 import 'react-phone-number-input/style.css';
 import Companyinformation from  './Companyinformation';
 import Uploaddocuments from './Uploaddocuments';
@@ -11,21 +9,6 @@ import Submitting from './Submitting';
 
 
 function Profile() {
-const navigate =useNavigate();
-const webcamRef = useRef(null);
-  const [showCamera, setShowCamera] = useState(false);
-  const [capturedImage, setCapturedImage] = useState(null);
-
-  const capture = useCallback(() => {
-    setShowCamera(true);
-  }, []);
-
-  const handleCaptureClick = useCallback(() => {
-    const imageSrc = webcamRef.current.getScreenshot();
-    setCapturedImage(imageSrc);
-    setShowCamera(false); 
-  }, []);
-
   return (
     <div>
         <Navbar />
@@ -55,24 +38,24 @@ const webcamRef = useRef(null);
                     </ul>
             <div class="tab-content" id="profile-details">
             <div class="tab-pane fade show active" id="personal-data">
-        <Personalinformation />
-                                        </div>
-                                        <div class="tab-pane fade" id="company-details">
-                                        <Companyinformation />
-                                        </div>
-                                        <div class="tab-pane fade" id="upload-documents">
-                                        <Uploaddocuments />
-                                        </div>
-                                        <div class="tab-pane fade" id="comfirm-details-and-submit">
-                                        <Submitting />
-                                        </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <Personalinformation />
+            </div>
+            <div class="tab-pane fade" id="company-details">
+            <Companyinformation />
+            </div>
+            <div class="tab-pane fade" id="upload-documents">
+            <Uploaddocuments />
+            </div>
+            <div class="tab-pane fade" id="comfirm-details-and-submit">
+            <Submitting />
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+        </div>
     
     <div class="footer-bar">
         <div class="container">

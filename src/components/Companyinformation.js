@@ -6,16 +6,18 @@ function Companyinformation() {
   const [businessLicense, setBusinessLicense] = useState('');
   const [companyRegistrationCertificate, setCompanyRegistrationCertificate] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const user_id = localStorage.getItem('user_id');
 
   const handleCompanyInformation = () => {
     setIsLoading(true);
 
     const formData = {
+      user_id : user_id,
       business_license : businessLicense,
       company_registration_certificate: companyRegistrationCertificate,
     };
 
-    fetch('http://16.16.27.213:3002/profile/create-company-details', {
+    fetch('http://localhost:3002/profile/create-company-details', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -81,13 +83,7 @@ function Companyinformation() {
                     </div>
                     <div className="d-sm-flex justify-content-between align-items-center">
                       <button className="btn btn-primary" onClick={handleCompanyInformation} disabled={isLoading}>
-                        {isLoading ? (
-                          <div className="spinner-border text-light" role="status">
-                            <span className="sr-only">Loading...</span>
-                          </div>
-                        ) : (
-                          'Update Company information'
-                        )}
+                        Update Company information
                       </button>
                       <div className="gaps-2x d-sm-none"></div>
                       <span className="text-success"><em className="ti ti-check-box"></em> All Changes are saved</span>
