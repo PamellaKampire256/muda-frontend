@@ -36,7 +36,7 @@ function Personalinformation() {
     };
 
     try {
-      const response = await fetch('http://localhost:3002/profile/create-personalkyc', {
+      const response = await fetch('http://16.16.27.213:3002/profile/create-personalkyc', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

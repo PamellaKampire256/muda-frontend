@@ -17,7 +17,7 @@ function Companyinformation() {
       company_registration_certificate: companyRegistrationCertificate,
     };
 
-    fetch('http://localhost:3002/profile/create-company-details', {
+    fetch('http://16.16.27.213:3002/profile/create-company-details', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

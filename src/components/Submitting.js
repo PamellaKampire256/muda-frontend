@@ -20,7 +20,7 @@ function Submitting() {
       const user_id = localStorage.getItem('user_id');
 
       if (user_id) {
-        fetch('http://localhost:3002/profile/activate-user', {
+        fetch('http://16.16.27.213:3002/profile/activate-user', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

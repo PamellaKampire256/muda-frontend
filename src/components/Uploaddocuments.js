@@ -27,7 +27,7 @@ function UploadDocuments() {
 
   const handleUpload = async () => {
     setIsLoading(true)
-    const apiUrl = 'http://localhost:3002/upload/upload-files';
+    const apiUrl = 'http://16.16.27.213:3002/upload/upload-files';
 
     const data = new FormData();
     data.append('national_id_card_or_passport', formData.national_id_card_or_passport);
