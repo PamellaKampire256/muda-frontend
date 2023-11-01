@@ -56,7 +56,6 @@ function Navbar() {
                                 <li class="has-dropdown"><Link class="drop-toggle" href="#">User Pages</Link>
                                     <ul class="navbar-dropdown">
                                         <li><a href="/#/userlist">User List - Admin</a></li>
-                                        <li><a href="/#/userdetails">User Details - Admin</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-dropdown"><Link className="drop-toggle" to="#">Misc Page</Link>

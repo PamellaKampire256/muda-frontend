@@ -1,12 +1,39 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from './Navbar';
-import { Link } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 import IconButton from '@mui/material/IconButton';
 
 
 function Userlist() {
   const [users, setUsers] = useState([]);
+  const navigate = useNavigate(); 
+
+  const handleEdit = (userId) => {
+    const userData = { userId };
+
+    fetch(`http://localhost:3002/all_users/user/${userId}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userData),
+    })
+      .then((response) => {
+        if (response.status === 200) {
+          console.log(`User with ID ${userId} has been updated.`);
+          navigate(`/edituserdetails/${userId}?edit=true`);
+        } else {
+          console.error(`Error updating user with ID ${userId}`);
+        }
+      })
+      .catch((error) => {
+        console.error('Error updating user: ', error);
+      });
+  };
+  
+
   const handleDelete = (userId) => {
     fetch(`http://localhost:3002/all_users/user/${userId}`, {
       method: 'DELETE',
@@ -98,6 +125,19 @@ function Userlist() {
                                 </Link>
                               </div>
                           </td>
+                          <td className="data-col text-right">
+                            <div className="relative d-inline-block">
+                            <IconButton
+                                style={{ color: 'black' }}
+                                onClick={() => {
+                                    handleEdit(user.user_id);
+                                    navigate(`/edituserdetails/${user.user_id}?edit=true`); // Include edit=true
+                                }}
+                                >
+                                <EditIcon />
+                                </IconButton>
+                            </div>
+                            </td>
                           <td className="data-col text-right">
                             <div className="relative d-inline-block">
                             <IconButton style={{ color: 'black' }} onClick={() => handleDelete(user.user_id)}>
