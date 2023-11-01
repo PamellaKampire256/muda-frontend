@@ -42,7 +42,7 @@ function App() {
     <Route path='/kycform' element= {<Kycform />} />
     <Route path='/kyclist' element={<Kyclist />} />
     <Route path='/policy' element={<Policy />} />
-    <Route path='/userdetails' element={<Userdetails />} />
+    <Route path='/userdetails/:userId' element={<Userdetails />} />
     <Route path='/userlist' element={<Userlist />} />
     <Route path='/individualsform' element={<Individualsform />} />
     <Route path='/companyinformation' element={<Companyinformation />} />

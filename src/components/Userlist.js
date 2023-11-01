@@ -5,8 +5,6 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 
 
-
-
 function Userlist() {
   const [users, setUsers] = useState([]);
   const handleDelete = (userId) => {
