@@ -1,14 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from './Navbar';
-import Userdetails from './Userdetails';
 import { Link } from 'react-router-dom';
+import DeleteIcon from '@mui/icons-material/Delete';
+import IconButton from '@mui/material/IconButton';
 
 
 function Userlist() {
-
-    const [users, setUsers] = useState([]);
-
-  useEffect(() => {
+  const [users, setUsers] = useState([]);
+  const handleDelete = (userId) => {
+    fetch(`http://localhost:3002/all_users/user/${userId}`, {
+      method: 'DELETE',
+    })
+      .then((response) => {
+        if (response.status === 200) {
+          fetchUserList();
+          console.log(`User with ID ${userId} has been deleted.`);
+        } else {
+          console.error(`Error deleting user with ID ${userId}`);
+        }
+      })
+      .catch((error) => {
+        console.error('Error deleting user: ', error);
+      });
+  };
+  
+  const fetchUserList = () => {
     fetch('http://localhost:3002/all_users/users')
       .then((response) => response.json())
       .then((data) => {
@@ -17,8 +33,12 @@ function Userlist() {
       .catch((error) => {
         console.error('Error fetching user data: ', error);
       });
+  };
+  
+  useEffect(() => {
+    fetchUserList();
   }, []);
-
+  
     return (
         <div>
           <Navbar />
@@ -76,17 +96,15 @@ function Userlist() {
                                     <em className="ti ti-more-alt"></em>
                                     View Details
                                 </Link>
-                                  <div class="toggle-class dropdown-content dropdown-content-top-left">
-                                      <ul class="dropdown-list">
-                                          <li><a href="kyc-details.html"><em class="ti ti-eye"></em> View Details</a></li>
-                                          <li><a href="#"><em class="ti ti-check"></em> Approve</a></li>
-                                          <li><a href="#"><em class="ti ti-na"></em> Cancel</a></li>
-                                          <li><a href="#"><em class="ti ti-trash"></em> Delete</a></li>
-                                      </ul>
-                                  </div>
                               </div>
                           </td>
-
+                          <td className="data-col text-right">
+                            <div className="relative d-inline-block">
+                            <IconButton style={{ color: 'black' }} onClick={() => handleDelete(user.user_id)}>
+                                <DeleteIcon />
+                                </IconButton>
+                            </div>
+                          </td>
                         </tr>
                       ))}
                     </tbody>
