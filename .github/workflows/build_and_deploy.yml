@@ -1,0 +1,38 @@
+# .github/workflows/build_and_test.yml
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    env:
+      CI: false
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install Yarn
+        run: npm install -g yarn
+
+      - name: Cleanup
+        run: |
+          rm -rf node_modules
+          rm -f package-lock.json
+
+      - name: Update Dependencies
+        run: yarn upgrade
+
+      - name: Install Dependencies
+        run: yarn install --force --legacy-peer-deps
+
+      - run: npm run build
+
+      - name: ssh deploy on aws ec2
+        uses: easingthemes/ssh-deploy@v2.1.4
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
+          REMOTE_HOST: ${{ secrets.DEPLOY_HOST }}
+          REMOTE_USER: ${{ secrets.DEPLOY_USER }}
+          REMOTE_PORT: ${{ secrets.DEPLOY_PORT }}
+          SOURCE: "build/"
+          TARGET: "/var/www/html/bmedia"
