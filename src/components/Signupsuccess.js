@@ -13,7 +13,7 @@ function Signupsuccess() {
                 <a href="/#/signupsuccess" class="page-ath-logo"><img src="assets/images/avatar8.png" srcset="assets/images/avatar9.png 2x" alt="logo" style={{ width: '250px', height: 'auto' }} /></a>
             </div>
             <div class="page-ath-text">
-                <h2 class="page-ath-heading">Thank you! <small>Your singup process is alomost done.</small> <span class="text-success">Please go to our next step and fill in your personal details.</span></h2><Link to="/profile"><strong style={{ textDecoration: 'underline', fontSize: '1.4em' }}>Here</strong></Link>
+                <h2 class="page-ath-heading">Thank you! <small>Your singup process is alomost done.</small> <span class="text-success">Please go to the next step and fill in your personal details.</span></h2><Link to="/profile"><strong style={{ textDecoration: 'underline', fontSize: '1.4em' }}>Here</strong></Link>
             </div>
             <div class="page-ath-footer">
                
