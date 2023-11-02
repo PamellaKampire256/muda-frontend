@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "977e9220-b490-4c51-8809-5c720a8ad726",
+		"name": "my-muda-api-project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29350767",
+		"_collection_link": "https://muda-kyc.postman.co/workspace/My-API-Workspace-~bc5420aa-9841-48be-80ac-d5327831f7d8/collection/29350767-977e9220-b490-4c51-8809-5c720a8ad726?action=share&source=collection_link&creator=29350767"
+	},
+	"item": [
+		{
+			"name": "Uploading documents",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "national_id_card_or_passport",
+							"type": "file",
+							"src": "/D:/kyc-app/public/assets/images/brand-d.png"
+						},
+						{
+							"key": "selfie",
+							"type": "file",
+							"src": "/D:/kyc-app/public/assets/images/brand-b.png"
+						},
+						{
+							"key": "proof_of_address",
+							"type": "file",
+							"src": "/D:/kyc-app/public/assets/images/brand-e.png"
+						},
+						{
+							"key": "trade_licences",
+							"type": "file",
+							"src": "/D:/kyc-app/public/assets/images/brand-c.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3002/upload/upload-files",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"upload",
+						"upload-files"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login a user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullname\": \"Pamella Kampire\",\r\n    \"password\": \"mypamella256\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullname\": \"Pamella\",\r\n    \"email\": \"pam@gmail.com\",\r\n    \"password\": \"pamella256\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register_user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"business_license\": \"Ppk123456889\",\r\n   \"company_registration_certificate\": \"Kkp123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3002/profile/create-company-details",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"profile",
+						"create-company-details"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -68,7 +68,7 @@ const webcamRef = useRef(null);
       formDataJSON[key] = value;
     });
 
-    fetch('http://localhost:3002/profile/create-personalkyc', {
+    fetch('http://16.16.27.213:3002/profile/create-personalkyc', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
