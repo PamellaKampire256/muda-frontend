@@ -9,6 +9,81 @@ import Submitting from './Submitting';
 
 
 function Profile() {
+       const navigate =useNavigate();
+       const handleProfile = () =>{
+        navigate('/kycform')
+       }
+       const [dateOfBirth, setDateOfBirth] = useState(null);
+       const [phoneNumber, setPhoneNumber] = useState('');
+       const [selectedTab, setSelectedTab] = useState('personal-data');
+       
+       const countryOptions = Object.keys(countries).map((countryCode) => ({
+        value: countryCode,
+        label: countries[countryCode].name,
+    }));
+
+    const [uploadedDocument1, setUploadedDocument1] = useState([]);
+const [uploadedDocument2, setUploadedDocument2] = useState([]);
+
+const handleDocument1Upload = (event) => {
+    const files = event.target.files;
+    if (files.length > 0) {
+        setUploadedDocument1([...uploadedDocument1, ...files]);
+    }
+};
+
+const handleDocument2Upload = (event) => {
+    const files = event.target.files;
+    if (files.length > 0) {
+        setUploadedDocument2([...uploadedDocument2, ...files]);
+    }
+};
+
+const webcamRef = useRef(null);
+  const [showCamera, setShowCamera] = useState(false);
+  const [capturedImage, setCapturedImage] = useState(null);
+
+  const capture = useCallback(() => {
+    setShowCamera(true);
+  }, []);
+
+  const handleCaptureClick = useCallback(() => {
+    const imageSrc = webcamRef.current.getScreenshot();
+    setCapturedImage(imageSrc);
+    setShowCamera(false); 
+  }, []);
+
+  const handleSubmit = (event) => {
+    event.preventDefault(); 
+
+    const formData = new FormData(event.target);
+
+    const formDataJSON = {};
+    formData.forEach((value, key) => {
+      formDataJSON[key] = value;
+    });
+
+    fetch('http://16.16.27.213:3002/profile/create-personalkyc', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formDataJSON),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log('API Response:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  };
+
   return (
     <div>
         <Navbar />

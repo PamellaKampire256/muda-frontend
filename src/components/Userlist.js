@@ -1,41 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from './Navbar';
-import { useNavigate,Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
 import IconButton from '@mui/material/IconButton';
 
 
 function Userlist() {
   const [users, setUsers] = useState([]);
-  const navigate = useNavigate(); 
-
-  const handleEdit = (userId) => {
-    const userData = { userId };
-
-    fetch(`http://localhost:3002/all_users/user/${userId}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(userData),
-    })
-      .then((response) => {
-        if (response.status === 200) {
-          console.log(`User with ID ${userId} has been updated.`);
-          navigate(`/edituserdetails/${userId}?edit=true`);
-        } else {
-          console.error(`Error updating user with ID ${userId}`);
-        }
-      })
-      .catch((error) => {
-        console.error('Error updating user: ', error);
-      });
-  };
-  
-
   const handleDelete = (userId) => {
-    fetch(`http://localhost:3002/all_users/user/${userId}`, {
+    fetch(`http://16.16.27.213:3002/all_users/user/${userId}`, {
       method: 'DELETE',
     })
       .then((response) => {
@@ -52,7 +25,7 @@ function Userlist() {
   };
   
   const fetchUserList = () => {
-    fetch('http://localhost:3002/all_users/users')
+    fetch('http://16.16.27.213:3002/all_users/users')
       .then((response) => response.json())
       .then((data) => {
         setUsers(data.users);
@@ -123,26 +96,21 @@ function Userlist() {
                                     <em className="ti ti-more-alt"></em>
                                     View Details
                                 </Link>
+                                  <div class="toggle-class dropdown-content dropdown-content-top-left">
+                                      <ul class="dropdown-list">
+                                          <li><a href="kyc-details.html"><em class="ti ti-eye"></em> View Details</a></li>
+                                          <li><a href="#"><em class="ti ti-check"></em> Approve</a></li>
+                                          <li><a href="#"><em class="ti ti-na"></em> Cancel</a></li>
+                                          <li><a href="#"><em class="ti ti-trash"></em> Delete</a></li>
+                                      </ul>
+                                  </div>
                               </div>
                           </td>
                           <td className="data-col text-right">
                             <div className="relative d-inline-block">
-                            <IconButton
-                                style={{ color: 'black' }}
-                                onClick={() => {
-                                    handleEdit(user.user_id);
-                                    navigate(`/edituserdetails/${user.user_id}?edit=true`); // Include edit=true
-                                }}
-                                >
-                                <EditIcon />
-                                </IconButton>
-                            </div>
-                            </td>
-                          <td className="data-col text-right">
-                            <div className="relative d-inline-block">
                             <IconButton style={{ color: 'black' }} onClick={() => handleDelete(user.user_id)}>
-                                <DeleteIcon />
-                                </IconButton>
+  <DeleteIcon />
+</IconButton>
                             </div>
                           </td>
                         </tr>

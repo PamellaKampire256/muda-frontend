@@ -7,7 +7,7 @@ function UserDetails() {
   const [user, setUser] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:3002/all_users/user/${userId}`)
+    fetch(`http://16.16.27.213:3002/all_users/user/${userId}`)
       .then((response) => response.json())
       .then((data) => {
         setUser(data.user_information);
