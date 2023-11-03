@@ -109,8 +109,8 @@ function Userlist() {
                           <td className="data-col text-right">
                             <div className="relative d-inline-block">
                             <IconButton style={{ color: 'black' }} onClick={() => handleDelete(user.user_id)}>
-  <DeleteIcon />
-</IconButton>
+                              <DeleteIcon />
+                            </IconButton>
                             </div>
                           </td>
                         </tr>

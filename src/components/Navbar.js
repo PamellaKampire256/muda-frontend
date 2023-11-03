@@ -47,12 +47,12 @@ function Navbar() {
                         <li class="has-dropdown page-links-all"><Link class="drop-toggle" href="#"><em class="ikon ikon-exchange"></em>Company Information</Link>
                             <ul class="navbar-dropdown">
                                
-                                <li class="has-dropdown"><Link class="drop-toggle" href="#">KYC Panel</Link>
+                                {/* <li class="has-dropdown"><Link class="drop-toggle" href="#">KYC Panel</Link>
                                     <ul class="navbar-dropdown">                                  
                                         <li><a href="/muda-kyc/#/kyclist">KYC Lists - Admin</a></li>
                                         <li><a href="/muda-kyc/#/kycdetails">KYC Details - Admin</a></li>
                                     </ul>
-                                </li>
+                                </li> */}
                                 <li class="has-dropdown"><Link class="drop-toggle" href="#">User Pages</Link>
                                     <ul class="navbar-dropdown">
                                         <li><a href="/muda-kyc/#/userlist">User List - Admin</a></li>
