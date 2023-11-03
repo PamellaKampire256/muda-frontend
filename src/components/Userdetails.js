@@ -55,8 +55,12 @@ function UserDetails() {
                   <div className="data-details-des">{user.nationality}</div>
                 </li>
                 <li>
+                  <div className="data-details-head">Address</div>
+                  <div className="data-details-des">{user.address}</div>
+                </li>
+                <li>
                   <div className="data-details-head">Identification Number</div>
-                  <div className="data-details-des">{user.identification_number}</div>
+                  <div className="data-details-des">{user.id_number}</div>
                 </li>
                 <li>
                   <div className="data-details-head">Phone Number</div>
@@ -64,11 +68,11 @@ function UserDetails() {
                 </li>
                 <li>
                   <div className="data-details-head">Email Address</div>
-                  <div className="data-details-des">{user.email}</div>
+                  <div className="data-details-des">{user.email_address}</div>
                 </li>
                 <li>
                   <div className="data-details-head">Tax Identification Number (TIN)</div>
-                  <div className="data-details-des">{user.tax_id}</div>
+                  <div className="data-details-des">{user.tax_id_number}</div>
                 </li>
                 <li>
                   <div className="data-details-head">Source of Funds</div>
@@ -82,9 +86,9 @@ function UserDetails() {
                   <div className="data-details-head">Company Registration Certificate</div>
                   <div className="data-details-des">{user.company_registration_certificate}</div>
                 </li>
-                <li>
+                {/* <li>
                   <div className="data-details-head">National ID Card OR Passport (Both Sides)</div>
-                  <div className="data-details-des">{user.national_id_or_passport}</div>
+                  <div className="data-details-des">{user.national_id_card_or_passport}</div>
                 </li>
                 <li>
                   <div className="data-details-head">Selfie</div>
@@ -96,9 +100,95 @@ function UserDetails() {
                 </li>
                 <li>
                   <div className="data-details-head">Trade Licenses (for specific industries or activities)</div>
-                  <div className="data-details-des">{user.trade_licenses}</div>
-                </li>
+                  <div className="data-details-des">{user.trade_licences}</div>
+                </li> */}
               </ul>
+              <div class="gaps-3x"></div>
+                    <h6 class="card-sub-title">Documents</h6>
+                    <ul className="data-details-list">
+                    <li>
+                      <div className="data-details-head">National ID Card OR Passport (Both Sides)</div>
+                      <ul className="data-details-docs">
+                        <li>
+                          <span className="data-details-docs-title"></span>
+                          <div className="data-doc-item data-doc-item-lg">
+                            <div className="data-doc-image">
+                              {user.national_id_card_or_passport && (
+                                <img
+                                  src={`data:image/jpeg;base64, ${user.national_id_card_or_passport}`}
+                                  alt="National ID Card OR Passport"
+                                />
+                              )}
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+
+                  <ul className="data-details-list">
+                    <li>
+                      <div className="data-details-head">Selfie</div>
+                      <ul className="data-details-docs">
+                        <li>
+                          <span className="data-details-docs-title"></span>
+                          <div className="data-doc-item data-doc-item-lg">
+                            <div className="data-doc-image">
+                              {user.selfie && (
+                                <img
+                                  src={`data:image/jpeg;base64, ${user.selfie}`}
+                                  alt="Selfie"
+                                />
+                              )}
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+
+                  <ul className="data-details-list">
+                    <li>
+                      <div className="data-details-head">Proof of Address (e.g., utility bill, bank statement for the business)</div>
+                      <ul className="data-details-docs">
+                        <li>
+                          <span className="data-details-docs-title"></span>
+                          <div className="data-doc-item data-doc-item-lg">
+                            <div className="data-doc-image">
+                              {user.proof_of_address && (
+                                <img
+                                  src={`data:image/jpeg;base64, ${user.proof_of_address}`}
+                                  alt="Proof of Address"
+                                />
+                              )}
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+
+                  <ul className="data-details-list">
+                    <li>
+                      <div className="data-details-head">Trade Licences (for specific industries or activities)</div>
+                      <ul className="data-details-docs">
+                        <li>
+                          <span className="data-details-docs-title"></span>
+                          <div className="data-doc-item data-doc-item-lg">
+                            <div className="data-doc-image">
+                              {user.trade_licences && (
+                                <img
+                                  src={`data:image/jpeg;base64, ${user.trade_licences}`}
+                                  alt="Trade Licences"
+                                />
+                              )}
+                            </div>
+                            
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
               <div className="gaps-3x"></div>
               <h6 className="card-sub-title">More Information</h6>
               <ul className="data-details-list">
@@ -120,14 +210,14 @@ function UserDetails() {
         <div className="container">
           <div className="row align-items-center justify-content-center">
             <div className="col-md-8">
-              <ul className="footer-links">
+              {/* <ul className="footer-links">
                 <li><a href="/#/faqpage">FAQs</a></li>
                 <li><a href="/#/policy">Privacy Policy</a></li>
-              </ul>
+              </ul> */}
             </div>
             <div className="col-md-4 mt-2 mt-sm-0">
               <div className="d-flex justify-content-between justify-content-md-end align-items-center guttar-25px pdt-0-5x pdb-0-5x">
-                <div className="copyright-text">&copy; MUDA KYC Project.</div>
+                <div className="copyright-text">&copy; 2023 MUDA KYC Project.</div>
                 <div className="lang-switch relative">
                 </div>
               </div>

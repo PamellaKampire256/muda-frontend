@@ -63,8 +63,8 @@ function Register() {
               </div>
               <div className="input-item text-left">
                 <input className="input-checkbox input-checkbox-md" id="term-condition" type="checkbox" />
-                <label htmlFor="term-condition">I agree to MUDA KYC’s <a href="/#/policy">Privacy Policy</a> &amp;</label>
-              </div>
+                <label htmlFor="term-condition">I agree to MUDA KYC’s Privacy Policy</label>
+                {/* <label htmlFor="term-condition">I agree to MUDA KYC’s <a href="/#/policy">Privacy Policy</a> &amp;</label> */}              </div>
               <button type="submit" className="btn btn-primary btn-block">Create Account</button>
             </form>
             <ul className="row guttar-20px guttar-vr-20px">
