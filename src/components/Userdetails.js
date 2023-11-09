@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import Navbar from './Navbar';
 
 function UserDetails() {
   const { userId } = useParams();
   const [user, setUser] = useState({});
+
 
   useEffect(() => {
     fetch(`http://16.16.27.213:3002/all_users/user/${userId}`)
@@ -28,14 +29,14 @@ function UserDetails() {
                 <h4 className="card-title mb-0">User Details</h4>
                 <div className="d-flex align-items-center guttar-20px">
                   <div className="flex-col d-sm-block d-none">
-                    <a href="/#/userlist" className="btn btn-sm btn-auto btn-primary">
+                    <Link to="/userlist" className="btn btn-sm btn-auto btn-primary">
                       <em className="fas fa-arrow-left mr-3"></em>Back
-                    </a>
+                    </Link>
                   </div>
                   <div className="flex-col d-sm-none">
-                    <a href="/#/userlist" className="btn btn-icon btn-sm btn-primary">
+                    <Link to="/userlist" className="btn btn-icon btn-sm btn-primary">
                       <em className="fas fa-arrow-left"></em>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
