@@ -26,7 +26,7 @@ function Navbar() {
                     </a>
                     <ul class="topbar-nav">
                         <li class="topbar-nav-item relative">
-                            <span class="user-welcome d-none d-lg-inline-block">Welcome! Kampire Pamella</span>
+                            <span class="user-welcome d-none d-lg-inline-block">Welcome!</span>
                             <a class="toggle-tigger user-thumb" href="#" style={{ pointerEvents: 'none' }} ><em class="ti ti-user">  </em></a>
                             <div class="toggle-class dropdown-content dropdown-content-right dropdown-arrow-right user-dropdown">
                                 <ul class="user-links">
@@ -67,8 +67,8 @@ function Navbar() {
                         </li>
                     </ul>
                     <ul class="navbar-btns">
-                        <li><a href="/muda-kyc/#/kycapplication" class="btn btn-sm btn-outline btn-light"><em class="text-primary ti ti-files"></em><span>KYC Application</span></a></li>
-                        <li class="d-none"><span class="badge badge-outline badge-success badge-lg"><em class="text-success ti ti-files mgr-1x"></em><span class="text-success">KYC Approved</span></span></li>
+                        {/* <li><a href="/muda-kyc/#/kycapplication" class="btn btn-sm btn-outline btn-light"><em class="text-primary ti ti-files"></em><span>KYC Application</span></a></li>
+                        <li class="d-none"><span class="badge badge-outline badge-success badge-lg"><em class="text-success ti ti-files mgr-1x"></em><span class="text-success">KYC Approved</span></span></li> */}
                     </ul>
                 </div>
             </div>
