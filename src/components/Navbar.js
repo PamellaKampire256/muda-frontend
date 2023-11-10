@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, useNavigate, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 function Navbar() {
@@ -60,7 +60,7 @@ function Navbar() {
                                 </li>
                                 <li class="has-dropdown"><Link className="drop-toggle" to="#">Misc Page</Link>
                                     <ul class="navbar-dropdown">
-                                        <li><a href="/"><i class="ti ti-power-off"></i>Logout</a></li>
+                                        <li><Link to="/"><i class="ti ti-power-off"></i>Logout</Link></li>
                                     </ul>
                                 </li>
                             </ul>
